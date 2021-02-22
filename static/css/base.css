@@ -1,0 +1,44 @@
+ul.navbar-nav li{padding-left: 1.2rem;}
+body{font-family: 'Lato', sans-serif;}
+.navbar-brand img{height:4rem;}
+.navbar-toggler{border: none!important;font-size: 1rem;}
+.navbar-toggler:focus {box-shadow: none;color:black;}
+.navbar-light .navbar-nav .nav-link {color: black; font-weight: bold;}
+.nav-icon button{padding:0 0 0 1rem;}
+.nav-icon button span.badge{font-size:1.2rem; padding:0 0.35rem;}
+.nav-icon-text{font-weight: bold;}
+
+.btn-group{
+    border-radius: 6px;
+    padding:0.5rem;
+
+}
+h1
+.btn-group button{
+    font-size: 1rem;
+    color:rgb(156, 165, 165);
+}
+
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+.teacher-card-body nav{display: inline-block;}
+.teacher-card-body nav.span1{color:white;background-color: #dc3545; padding: 0 0.5rem 0.1rem 0.5rem; top:auto;}
+.teacher-card-body nav.span2{color: #dc3545; padding: 0 0.5rem 0.1rem 0.5rem; margin-left:auto}
+.brows-img{width: 100%;}
+
+
+.cursive{font-family: 'Lobster', cursive;}
+.card-icon-1, .card-icon-2{width:2.5rem; height:2.5rem; padding-top: 0.3rem; border-radius: 50%; background-color: white; font-size: 1.2rem; position:absolute; top:1rem;right:1rem;}
+.card-icon-1{color:#dc3545;}
+.card{border:none;}
+.text-light1{color:rgb(174, 180, 180);}
+.btn-icon{margin-right:0.4rem;}
+
+@media (max-width:990px){
+    ul li{padding-left: 0rem}
+    .nav-icon button{padding:0 0 0 0.5rem;}
+}
+
+@media (max-width:500px){
+    .nav-icon-text{display: none;}
+}
