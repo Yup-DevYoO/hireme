@@ -7,45 +7,79 @@
     <title>Document</title>
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 </head>
 <body>
- <section style="padding: 10%;">
-    <div class="row g-3">
-        <button class="btn btn-light">calculate the coffee-water ratio</button>
-        <div class="col-md-12">
+    <style>.text-right{text-align: right;}.px-10{padding-left:10%;padding-right:10%;} @media(max-width:500px){.px-10{padding-left:5px;padding-right:5px;}}</style>
+
+    <!-- <iframe height="580px" src="footer.html" width="100%"></iframe> -->
+
+
+    <section class="px-10">
+    <!-- <form class="row px-3 m-0">
+         -->
+        <button class="btn btn-danger w-100 text-light">calculate the coffee-water ratio</button>
+        <div class="row m-0 py-3">
             
-          <label for="inputratio" class="form-label">Ratio(coffee:Water)</label>
-          <select id="inputratio" class="form-select" onchange="myFunction()">
+          <label for="inputratio" class="col-4">Ratio (coffee:Water)</label>
+          <div class="col-8"><select id="inputratio" class="form-select" onchange="myFunction()">
             <option id="0">1:13</option><option id="1">1:14</option><option id="2">1:15</option><option id="3">1:16</option><option id="4">1:17</option><option id="5" selected>1:18</option><option id="6">1:19</option>
-          </select>
-        </div>
-
-        <div class="col-12">
-          <label for="inputwater" class="form-label">Water(in milliliters)</label>
-          <input type="number" class="form-control" id="inputwater" placeholder="80">
+          </select></div>
+          
         </div>
 
 
-        <div class="col-12">
-            <label for="inputgcoffee" class="form-label">Ground coffee(in gram)</label>
-            <input type="number" class="form-control" id="inputgcoffee" placeholder="4.4">
-          </div>
+        <!-- Water -->
+        <div class="row m-0 py-3">
+          <label for="inputwater" class="col-4">Water</label>
+          <div class="col-4"><input type="number" class="form-control" id="inputwater" placeholder="80"></div>
+          <div class="col-4"><select id="waterSelect" class="form-select col-4" onchange="myFunction()">
+            <option selected>Gallon</option><option>MilliLiters</option><option>Liters</option><option id="3">Quarts</option><option>Cups</option><option>Ounces</option>
+          </select></div>
+        </div>
 
 
+        <!-- groundcoffee -->
+        <div class="row m-0 py-3">
+            <label for="inputgcoffee" class="col-4">Ground Coffee</label>
+            <div class="col-4"><input type="number" class="form-control" id="inputgcoffee" placeholder="4.44"></div>
+            <div class="col-4"><select id="gcoffeeSelect" class="form-select col-4" onchange="myFunction()">
+                <option selected>Grams</option><option>Ounces</option><option>Cups</option><option id="3">Kilos</option><option>Pounds</option>
+              </select>
+            </div>
+        </div>
 
-        <div class="col-12">
-            <label for="inputBcoffee" class="form-label">Brewed coffee(in milliliters)</label>
-            <input type="number" class="form-control" id="inputBcoffee" placeholder="70.60">
-          </div>
-          <label for="customRange2" class="form-label">Coffee-water ratio range</label>
-<input type="range" class="form-range" min="0" max="6" value="5" id="customRange">
-      </div>
-    </section>
+    <!-- Brewed coffee -->
+        <div class="row m-0 py-3">
+            <label for="inputBcoffee" class="col-4">Brewed Coffee</label>
+            <div class="col-4"><input type="number" class="form-control" id="inputBcoffee" placeholder="71.14"></div>
+            <div class="col-4"><select id="bcoffeeselect" class="form-select col-4" onchange="myFunction()">
+                <option selected>Gallon</option><option>MilliLiters</option><option>Liters</option><option id="3">Quarts</option><option>Cups</option><option>Ounces</option>
+              </select>
+            </div>
+        </div>
 
+<div class="row m-0 py-3 justify-content-between">
+    <div class="col">Strong</div>
+    <div class="col text-center">Medium</div>
+    <div class="col text-right">Weak</div>
+</div>
+<input type="range" class="form-range col-4" onchange="myFunction1()" min="0" max="6" value="5" id="customRange">
+
+</section>
 <script> 
+// var sx =  document.getElementById("inputratio").value;
+var rx = document.getElementById('customRange').value;
+var gcx = document.getElementById('inputgcoffee').value;
+var bcx  = document.getElementById('inputBcoffee').value;
+var wx = document.getElementById('inputwater').value;
+
+var ws =  document.getElementById("inputratio").value;
+var gcs = document.getElementById("inputratio").value;
+var bcs = document.getElementById("inputratio").value;
+
 function myFunction() {
     var sx =  document.getElementById("inputratio").value;
-    var rx = document.getElementById('customRange').value;
     console.log(sx);
     if (sx=="1:14"){
         document.getElementById('inputgcoffee').value = 5.71;
@@ -80,6 +114,50 @@ function myFunction() {
     }
 }
 
+
+function myFunction1() {
+    var sx =  document.getElementById("customRange").value;
+    // var rx = document.getElementById('inputratio').value;
+    console.log('rx');
+    if (sx==1){
+        document.getElementById('inputgcoffee').value = 5.71;
+        document.getElementById('inputBcoffee').value = 68.61;
+        document.getElementById('inputratio').value="1:14";
+    }else if (sx==0){
+        document.getElementById('inputgcoffee').value = 6.15;
+        document.getElementById('inputBcoffee').value = 67.73;
+        document.getElementById('inputratio').value="1:13";
+    }else if (sx==2){
+        document.getElementById('inputgcoffee').value = 5.33;
+        document.getElementById('inputBcoffee').value = 69.37;
+        document.getElementById('inputratio').value="1:15";
+    }else if (sx==3){
+        document.getElementById('inputgcoffee').value = 5.00;
+        document.getElementById('inputBcoffee').value = 70.03;
+        document.getElementById('inputratio').value="1:16";
+    }else if (sx==4){
+        document.getElementById('inputgcoffee').value = 4.71;
+        document.getElementById('inputBcoffee').value = 70.60;
+        document.getElementById('inputratio').value="1:17";
+    }else if (sx==5){
+        document.getElementById('inputgcoffee').value = 4.44;
+        document.getElementById('inputBcoffee').value = 71.14;
+        document.getElementById('inputratio').value="1:18";
+    }else if (sx==6){
+        document.getElementById('inputgcoffee').value = 4.21;
+        document.getElementById('inputBcoffee').value = 71.60;
+        document.getElementById('inputratio').value="1:19";
+    }else {
+        console.log('else');
+    }
+}
+
 </script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function(){
+    $("#includedContent").load("footer.html");
+    });
+</script> -->
 </body>
 </html>
