@@ -11,8 +11,8 @@
 </head>
 <body>
     <style>.text-right{text-align: right;}.px-10{padding-left:10%;padding-right:10%;} @media(max-width:500px){.px-10{padding-left:5px;padding-right:5px;}}</style>
-
-    <!-- <iframe height="580px" src="footer.html" width="100%"></iframe> -->
+<!-- 
+    <iframe height="435px" src="https://potri.in/index1" width="100%"></iframe> -->
 
 
     <section class="px-10">
@@ -22,7 +22,7 @@
         <div class="row m-0 py-3">
             
           <label for="inputratio" class="col-4">Ratio (coffee:Water)</label>
-          <div class="col-8"><select id="inputratio" class="form-select" onchange="myFunction()">
+          <div class="col-8"><select id="inputratio" class="form-select"  onchange="myFunction()">
             <option id="0">1:13</option><option id="1">1:14</option><option id="2">1:15</option><option id="3">1:16</option><option id="4">1:17</option><option id="5" selected>1:18</option><option id="6">1:19</option>
           </select></div>
           
@@ -32,18 +32,22 @@
         <!-- Water -->
         <div class="row m-0 py-3">
           <label for="inputwater" class="col-4">Water</label>
-          <div class="col-4"><input type="number" class="form-control" id="inputwater" placeholder="80"></div>
-          <div class="col-4"><select id="waterSelect" class="form-select col-4" onchange="myFunction()">
-            <option selected>Gallon</option><option>MilliLiters</option><option>Liters</option><option id="3">Quarts</option><option>Cups</option><option>Ounces</option>
-          </select></div>
+          <div class="col-4">
+              <input type="number" class="form-control" id="inputwater" value="80" onfocus="this.oldValue = this.value;" onkeyUp="myFunction3('waterInput',this.value, this.oldValue);this.oldValue = this.value;">
+        </div>
+          <div class="col-4">
+              <select id="waterSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('waterSelect',this.value, this.oldValue);this.oldValue = this.value;">
+                <option>Gallon</option><option selected>MilliLiters</option><option>Liters</option><option id="3">Quarts</option><option>Cups</option><option>Ounces</option>
+                </select>
+            </div>
         </div>
 
 
         <!-- groundcoffee -->
         <div class="row m-0 py-3">
             <label for="inputgcoffee" class="col-4">Ground Coffee</label>
-            <div class="col-4"><input type="number" class="form-control" id="inputgcoffee" placeholder="4.44"></div>
-            <div class="col-4"><select id="gcoffeeSelect" class="form-select col-4" onchange="myFunction()">
+            <div class="col-4"><input type="number" class="form-control" id="inputgcoffee" value="4.44"></div>
+            <div class="col-4"><select id="gcoffeeSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('gcoffeeSelect',this.value, this.oldValue);this.oldValue = this.value;">
                 <option selected>Grams</option><option>Ounces</option><option>Cups</option><option id="3">Kilos</option><option>Pounds</option>
               </select>
             </div>
@@ -52,31 +56,52 @@
     <!-- Brewed coffee -->
         <div class="row m-0 py-3">
             <label for="inputBcoffee" class="col-4">Brewed Coffee</label>
-            <div class="col-4"><input type="number" class="form-control" id="inputBcoffee" placeholder="71.14"></div>
-            <div class="col-4"><select id="bcoffeeselect" class="form-select col-4" onchange="myFunction()">
-                <option selected>Gallon</option><option>MilliLiters</option><option>Liters</option><option id="3">Quarts</option><option>Cups</option><option>Ounces</option>
+            <div class="col-4"><input type="number" class="form-control" id="inputBcoffee" value="71.14"></div>
+            <div class="col-4"><select id="bcoffeeSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('bcoffeeSelect',this.value, this.oldValue);this.oldValue = this.value;">
+                <option>Gallon</option><option selected>MilliLiters</option><option>Liters</option><option id="3">Quarts</option><option>Cups</option><option>Ounces</option>
               </select>
             </div>
         </div>
 
 <div class="row m-0 py-3 justify-content-between">
-    <div class="col">Strong</div>
+    <div class="col">Weak</div>
     <div class="col text-center">Medium</div>
-    <div class="col text-right">Weak</div>
+    <div class="col text-right">Strong</div>
 </div>
 <input type="range" class="form-range col-4" onchange="myFunction1()" min="0" max="6" value="5" id="customRange">
 
 </section>
 <script> 
-// var sx =  document.getElementById("inputratio").value;
-var rx = document.getElementById('customRange').value;
-var gcx = document.getElementById('inputgcoffee').value;
-var bcx  = document.getElementById('inputBcoffee').value;
-var wx = document.getElementById('inputwater').value;
+const liqPar = {MilliLiters:1,Liters:1000,Gallon:3785.411784,Quarts:946.352946,Cups:226.796,Ounces:28.3495}
+const solPar = {Grams:1,Ounces:28.35,Cups:0.23,Kilos:1000,Pounds:453.592}
 
-var ws =  document.getElementById("inputratio").value;
-var gcs = document.getElementById("inputratio").value;
-var bcs = document.getElementById("inputratio").value;
+// var sx =  document.getElementById("inputratio").value;
+const r = document.getElementById('customRange');
+const gc = document.getElementById('inputgcoffee');
+const bc  = document.getElementById('inputBcoffee');
+const w = document.getElementById('inputwater');
+
+const ws =  document.getElementById("inputratio");
+const gcs = document.getElementById("gcoffeeSelect");
+const bcs = document.getElementById("inputratio");
+var wOldVal;
+var gcOldVal
+var bcOldVal;
+
+function mathFunction(whatfor,oldValue,value){
+
+    if(whatfor=="sol"){
+        var y = solPar[oldValue];
+        var x = solPar[value];
+        return x/y;
+    }else if(whatfor=="liq"){
+        var y = liqPar[oldValue];
+        var x = liqPar[value];
+        return x/y;
+    }else if(whatfor="input"){
+        return value/oldValue;
+    }
+}
 
 function myFunction() {
     var sx =  document.getElementById("inputratio").value;
@@ -150,6 +175,64 @@ function myFunction1() {
     }else {
         console.log('else');
     }
+}
+
+function myFunction2(type,value,oldValue){
+    console.log(oldValue);
+
+    if (type=="waterSelect"){
+        var mf = mathFunction('liq',oldValue,value);
+        CoffeeChange(mf,gc);
+        CoffeeChange(mf,bc);
+    }else if(type=="bcoffeeSelect"){
+        var mf = mathFunction('liq',oldValue,value);
+        CoffeeChange(mf,w);
+        CoffeeChange(mf,gc);
+    }else if(type=="gcoffeeSelect"){
+        var mf = mathFunction('sol',oldValue,value);
+        CoffeeChange(mf,w);
+        CoffeeChange(mf,bc);
+    }else if(type=="waterInput"){
+        console.log('new = '+value+", y = "+oldValue)
+        var mf = mathFunction('input',oldValue,value);
+        CoffeeChange(mf,gc);
+        CoffeeChange(mf,bc);
+    }
+}
+
+function CoffeeChange(mf,changingKey){
+    changingKey.value = (changingKey.value * mf).toFixed(2);
+}
+
+function CoffeeChangefrom0(mf,changingKey,value){
+    changingKey.value = (value * mf).toFixed(2);
+}
+
+function myFunction3(type,value,oldValue){
+    console.log('new = '+value+", y = "+oldValue);
+    // console.log(oldValue.length==0);
+    // console.log(value);
+    // console.log(value);
+    // console.log(value);
+    if(oldValue.length!=0 && value.length!=0 && typeof(value)!='undefined' && value!=0){
+        console.log('if');
+        var mf = mathFunction('input',oldValue,value);
+        CoffeeChange(mf,gc);
+        CoffeeChange(mf,bc);
+    }else if(oldValue.length>0 && (value.length==0 || typeof(value)=='undefined' || value.length==0 || value==0)){
+        wOldVal = oldValue;
+        gcOldVal=gc.value;
+        bcOldVal=bc.value;
+        // console.log('elseif w='+wOldVal+', gc='+gcOldVal+',bc='+bcOldVal);
+        gc.value=0;
+        bc.value=0;
+    }else if(oldValue.length==0 && (typeof(value)!='undefined' && value.length!=0 && value!=0)){
+        var mf = mathFunction('input',wOldVal,value);
+        console.log('value='+value,'old='+wOldVal+','+',gc='+gcOldVal+mf);
+        CoffeeChangefrom0(mf,gc,gcOldVal);
+        CoffeeChangefrom0(mf,bc,bcOldVal);
+    }
+    
 }
 
 </script>
