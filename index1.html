@@ -37,7 +37,7 @@
         </div>
           <div class="col-4">
               <select id="waterSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('waterSelect',this.value, this.oldValue);this.oldValue = this.value;">
-                <option>Gallon</option><option selected>MilliLiters</option><option>Liters</option><option id="3">Quarts</option><option>Cups</option><option>Ounces</option>
+                <option selected>Milliliters</option><option>Ounces</option><option>Cups</option><option id="3">Quarts</option><option>Liters</option><option>Gallon</option>
                 </select>
             </div>
         </div>
@@ -46,9 +46,9 @@
         <!-- groundcoffee -->
         <div class="row m-0 py-3">
             <label for="inputgcoffee" class="col-4">Ground Coffee</label>
-            <div class="col-4"><input type="number" class="form-control" id="inputgcoffee" value="4.44" onkeyUp="CoffeeChangeByInput('gcInput',this.value)"></div>
+            <div class="col-4"><input type="number" class="form-control" id="inputgcoffee" value="5" onkeyUp="CoffeeChangeByInput('gcInput',this.value)"></div>
             <div class="col-4"><select id="gcoffeeSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('gcoffeeSelect',this.value, this.oldValue);this.oldValue = this.value;">
-                <option selected>Grams</option><option>Ounces</option><option>Cups</option><option id="3">Kilos</option><option>Pounds</option>
+                <option selected>Grams</option><option>Ounces</option><option>Tablespoons</option><option>Cups</option><option id="3">Kilos</option><option>Pounds</option>
               </select>
             </div>
         </div>
@@ -56,9 +56,9 @@
     <!-- Brewed coffee -->
         <div class="row m-0 py-3">
             <label for="inputBcoffee" class="col-4">Brewed Coffee</label>
-            <div class="col-4"><input type="number" class="form-control" id="inputBcoffee" value="71.14" onkeyUp="CoffeeChangeByInput('bcInput',this.value)"></div>
+            <div class="col-4"><input type="number" class="form-control" id="inputBcoffee" value="70.03" onkeyUp="CoffeeChangeByInput('bcInput',this.value)"></div>
             <div class="col-4"><select id="bcoffeeSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('bcoffeeSelect',this.value, this.oldValue);this.oldValue = this.value;">
-                <option>Gallon</option><option selected>MilliLiters</option><option>Liters</option><option id="3">Quarts</option><option>Cups</option><option>Ounces</option>
+                <option selected>Milliliters</option><option>Ounces</option><option>Cups</option><option id="3">Quarts</option><option>Liters</option><option>Gallon</option>
               </select>
             </div>
         </div>
@@ -72,8 +72,8 @@
 
 </section>
 <script> 
-const liqPar = {MilliLiters:1,Liters:1000,Gallon:3785.411784,Quarts:946.352946,Cups:226.796,Ounces:28.3495}
-const solPar = {Grams:1,Ounces:28.35,Cups:0.23,Kilos:1000,Pounds:453.592}
+const liqPar = {Milliliters:1,Liters:1000,Gallon:3785.41,Quarts:946.353,Cups:236.588,Ounces:29.5735}
+const solPar = {Grams:1,Ounces:28.34952,Cups:112,Kilos:1000,Pounds:453.592,Tablespoons:7}
 const cofficient={'1:13':13,"1:14":14,'1:15':15,'1:16':16,'1:17':17,'1:18':18,'1:19':19}
 const rangeCof={'1:13':0,"1:14":1,'1:15':2,'1:16':3,'1:17':4,'1:18':5,'1:19':6}
 
@@ -111,7 +111,6 @@ function getKeyByValue(object, value) {
 }
 
 function myFunction2(type,value,oldValue){
-    console.log(oldValue);
 
     if (type=="waterSelect"){
         var mf = mathFunction('liq',oldValue,value);
@@ -139,7 +138,6 @@ function CoffeeChangeByInput(whatfor,val){
         bc.value = ((liqPar[ws.value]*val - (1.995*val*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2);
 
     }else if(whatfor=="gcInput"){
-        console.log('elseif bc')
         w.value = (val * cofficient[ir.value] * solPar[gcs.value]/liqPar[ws.value]).toFixed(2);
         bc.value = ((liqPar[ws.value]*w.value - (1.995*w.value*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2);
         
