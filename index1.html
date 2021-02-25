@@ -24,7 +24,7 @@ input[type="range"]{box-shadow: none;}.form-range::-webkit-slider-thumb { -webki
 
     <!-- <form class="row px-3 m-0" style="padding:0;">         -->
         <div class="py-3 px-3" style="border:3px solid #795548;border-radius: 20px;">
-        <div class="row m-0 p-0" style="padding:0;"><div class="col-4"><a href="https://www.craftcoffeeguru.com"><img src="logo/logo.png" alt="" srcset="" style="width:100%; max-width: 7rem;"></a></div><div class="col-8 text-right"><h2 class="cursive">Calculate the Coffee-Water ratio.</h2></div></div> <hr style="opacity:0.3;"> 
+        <div class="row m-0 p-0" style="padding:0;"><div class="col-4"><img src="logo/logo.png" alt="" srcset="" style="width:100%; max-width: 7rem;"></div><div class="col-8 text-right"><h2 class="cursive">Calculate the Coffee-Water ratio.</h2></div></div> <hr style="opacity:0.3;"> 
         
     <div style="padding-top: 0.5rem;padding-bottom: 0.5rem;">    <div class="row m-0 py-3">    
           <label for="inputratio" class="col-4">Ratio (Coffee :Water)</label>
@@ -83,6 +83,18 @@ const solPar = {Grams:1,Ounces:28.34952,Cups:112,Kilos:1000,Pounds:453.592,Table
 const cofficient={'1:13':13,"1:14":14,'1:15':15,'1:16':16,'1:17':17,'1:18':18,'1:19':19}
 const rangeCof={'1:13':0,"1:14":1,'1:15':2,'1:16':3,'1:17':4,'1:18':5,'1:19':6}
 
+function removeDecimal(val,changingKey){
+    changingKey.value=val;
+    // console.log(Number(val).toFixed());
+    if (Number(val)==Number(val).toFixed()){
+        console.log('remove decimal if changing key'+changingKey.id);
+        changingKey.value=Number(val).toFixed(0);
+    }else{
+        console.log('else removedecimal changing key'+changingKey.id);
+        changingKey.value=val;
+    }
+}
+
 var ir =  document.getElementById("inputratio");
 const r = document.getElementById('customRange');
 const gc = document.getElementById('inputgcoffee');
@@ -134,34 +146,34 @@ function myFunction2(type,value,oldValue){
 }
 
 function CoffeeChange(mf,changingKey){
-    changingKey.value = (changingKey.value * mf).toFixed(2);
+    removeDecimal((changingKey.value * mf).toFixed(2),changingKey);
 }
 
 function CoffeeChangeByInput(whatfor,val){
     if (whatfor == "waterInput"){
-        gc.value = (val / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2);
+        removeDecimal((val / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2),gc);
 
-        bc.value = ((liqPar[ws.value]*val - (1.995*val*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2);
+        removeDecimal(((liqPar[ws.value]*val - (1.995*val*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2),bc);
 
     }else if(whatfor=="gcInput"){
-        w.value = (val * cofficient[ir.value] * solPar[gcs.value]/liqPar[ws.value]).toFixed(2);
-        bc.value = ((liqPar[ws.value]*w.value - (1.995*w.value*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2);
+        removeDecimal((val * cofficient[ir.value] * solPar[gcs.value]/liqPar[ws.value]).toFixed(2),w);
+        removeDecimal(((liqPar[ws.value]*w.value - (1.995*w.value*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2), bc);
         
     }else if(whatfor=="bcInput"){
-        w.value = (val*liqPar[bcs.value]*cofficient[ir.value]/((cofficient[ir.value]-1.995)*liqPar[ws.value])).toFixed(2);
-        gc.value = (w.value / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2);
+        removeDecimal((val*liqPar[bcs.value]*cofficient[ir.value]/((cofficient[ir.value]-1.995)*liqPar[ws.value])).toFixed(2),w);
+        removeDecimal((w.value / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2),gc);
     }else if(whatfor=="ratioInput"){
-        gc.value = (w.value / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2);
+        removeDecimal((w.value / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2),gc);
 
-        bc.value = ((liqPar[ws.value]*w.value - (1.995*w.value*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2);
+        removeDecimal(((liqPar[ws.value]*w.value - (1.995*w.value*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2),bc);
 
         r.value = rangeCof[val];
     }else if(whatfor=="rangeInput"){
         var x = getKeyByValue(rangeCof,val);
         ir.value=x;
-        gc.value = (w.value / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2);
+        removeDecimal((w.value / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2),gc);
 
-        bc.value = ((liqPar[ws.value]*w.value - (1.995*w.value*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2);
+        removeDecimal(((liqPar[ws.value]*w.value - (1.995*w.value*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2),bc);
     }
 }
 
