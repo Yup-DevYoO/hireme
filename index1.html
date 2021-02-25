@@ -24,10 +24,10 @@ input[type="range"]{box-shadow: none;}.form-range::-webkit-slider-thumb { -webki
 
     <!-- <form class="row px-3 m-0" style="padding:0;">         -->
         <div class="py-3 px-3" style="border:3px solid #795548;border-radius: 20px;">
-        <div class="row m-0 p-0" style="padding:0;"><div class="col-4"><img src="logo/logo.png" alt="" srcset="" style="width:100%; max-width: 7rem;"></div><div class="col-8 text-right"><h2 class="cursive">Calculate the coffee-water ratio.</h2></div></div> <hr style="opacity:0.3;"> 
+        <div class="row m-0 p-0" style="padding:0;"><div class="col-4"><img src="logo/logo.png" alt="" srcset="" style="width:100%; max-width: 7rem;"></div><div class="col-8 text-right"><h2 class="cursive">Calculate the Coffee-Water ratio.</h2></div></div> <hr style="opacity:0.3;"> 
         
     <div style="padding-top: 0.5rem;padding-bottom: 0.5rem;">    <div class="row m-0 py-3">    
-          <label for="inputratio" class="col-4">Ratio (coffee :Water)</label>
+          <label for="inputratio" class="col-4">Ratio (Coffee :Water)</label>
           <div class="col-8"><select id="inputratio" class="form-select1"  onchange="CoffeeChangeByInput('ratioInput',this.value)">
             <option id="0">1:13</option><option id="1">1:14</option><option id="2">1:15</option><option id="3" selected>1:16</option><option id="4">1:17</option><option id="5">1:18</option><option id="6">1:19</option>
           </select></div>
@@ -43,7 +43,7 @@ input[type="range"]{box-shadow: none;}.form-range::-webkit-slider-thumb { -webki
         </div>
           <div class="col-4">
               <select id="waterSelect" class="form-select1" onfocus="this.oldValue = this.value;" onchange="myFunction2('waterSelect',this.value, this.oldValue);this.oldValue = this.value;">
-                <option selected>Milliliters</option><option>Ounces</option><option>Cups</option><option id="3">Quarts</option><option>Liters</option><option>Gallon</option>
+                <option selected>Milliliters</option><option >Grams</option><option>Ounces</option><option>Cups</option><option id="3">Quarts</option><option>Liters</option><option>Gallon</option>
                 </select>
             </div>
         </div>
@@ -64,7 +64,7 @@ input[type="range"]{box-shadow: none;}.form-range::-webkit-slider-thumb { -webki
             <label for="inputBcoffee" class="col-4">Brewed Coffee</label>
             <div class="col-4"><input type="number" class="form-control1" id="inputBcoffee" value="70.03" onkeyUp="CoffeeChangeByInput('bcInput',this.value)"></div>
             <div class="col-4"><select id="bcoffeeSelect" class="form-select1" onfocus="this.oldValue = this.value;" onchange="myFunction2('bcoffeeSelect',this.value, this.oldValue);this.oldValue = this.value;">
-                <option selected>Milliliters</option><option>Ounces</option><option>Cups</option><option id="3">Quarts</option><option>Liters</option><option>Gallon</option>
+                <option selected>Milliliters</option><option >Grams</option><option>Ounces</option><option>Cups</option><option id="3">Quarts</option><option>Liters</option><option>Gallon</option>
               </select>
             </div>
         </div>
@@ -78,7 +78,7 @@ input[type="range"]{box-shadow: none;}.form-range::-webkit-slider-thumb { -webki
 </div></div>
 </section>
 <script> 
-const liqPar = {Milliliters:1,Liters:1000,Gallon:3785.41,Quarts:946.353,Cups:236.588,Ounces:29.5735}
+const liqPar = {Milliliters:1,Grams:1,Liters:1000,Gallon:3785.41,Quarts:946.353,Cups:236.588,Ounces:29.5735}
 const solPar = {Grams:1,Ounces:28.34952,Cups:112,Kilos:1000,Pounds:453.592,Tablespoons:7}
 const cofficient={'1:13':13,"1:14":14,'1:15':15,'1:16':16,'1:17':17,'1:18':18,'1:19':19}
 const rangeCof={'1:13':0,"1:14":1,'1:15':2,'1:16':3,'1:17':4,'1:18':5,'1:19':6}
