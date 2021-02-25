@@ -22,8 +22,8 @@
         <div class="row m-0 py-3">
             
           <label for="inputratio" class="col-4">Ratio (coffee:Water)</label>
-          <div class="col-8"><select id="inputratio" class="form-select"  onchange="myFunction()">
-            <option id="0">1:13</option><option id="1">1:14</option><option id="2">1:15</option><option id="3">1:16</option><option id="4">1:17</option><option id="5" selected>1:18</option><option id="6">1:19</option>
+          <div class="col-8"><select id="inputratio" class="form-select"  onchange="CoffeeChangeByInput('ratioInput',this.value)">
+            <option id="0">1:13</option><option id="1">1:14</option><option id="2">1:15</option><option id="3" selected>1:16</option><option id="4">1:17</option><option id="5">1:18</option><option id="6">1:19</option>
           </select></div>
           
         </div>
@@ -33,7 +33,7 @@
         <div class="row m-0 py-3">
           <label for="inputwater" class="col-4">Water</label>
           <div class="col-4">
-              <input type="number" class="form-control" id="inputwater" value="80" onkeyUp="myFunction3('waterInput',this.value)">
+              <input type="number" class="form-control" id="inputwater" value="80" onkeyUp="CoffeeChangeByInput('waterInput',this.value)">
         </div>
           <div class="col-4">
               <select id="waterSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('waterSelect',this.value, this.oldValue);this.oldValue = this.value;">
@@ -46,7 +46,7 @@
         <!-- groundcoffee -->
         <div class="row m-0 py-3">
             <label for="inputgcoffee" class="col-4">Ground Coffee</label>
-            <div class="col-4"><input type="number" class="form-control" id="inputgcoffee" value="4.44" onkeyUp="myFunction3('gcInput',this.value)"></div>
+            <div class="col-4"><input type="number" class="form-control" id="inputgcoffee" value="4.44" onkeyUp="CoffeeChangeByInput('gcInput',this.value)"></div>
             <div class="col-4"><select id="gcoffeeSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('gcoffeeSelect',this.value, this.oldValue);this.oldValue = this.value;">
                 <option selected>Grams</option><option>Ounces</option><option>Cups</option><option id="3">Kilos</option><option>Pounds</option>
               </select>
@@ -56,25 +56,26 @@
     <!-- Brewed coffee -->
         <div class="row m-0 py-3">
             <label for="inputBcoffee" class="col-4">Brewed Coffee</label>
-            <div class="col-4"><input type="number" class="form-control" id="inputBcoffee" value="71.14" onkeyUp="myFunction3('bcInput',this.value)"></div>
+            <div class="col-4"><input type="number" class="form-control" id="inputBcoffee" value="71.14" onkeyUp="CoffeeChangeByInput('bcInput',this.value)"></div>
             <div class="col-4"><select id="bcoffeeSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('bcoffeeSelect',this.value, this.oldValue);this.oldValue = this.value;">
                 <option>Gallon</option><option selected>MilliLiters</option><option>Liters</option><option id="3">Quarts</option><option>Cups</option><option>Ounces</option>
               </select>
             </div>
         </div>
 
-<div class="row m-0 py-3 justify-content-between">
+<div class="row m-0 pt-3 justify-content-between">
     <div class="col">Weak</div>
     <div class="col text-center">Medium</div>
     <div class="col text-right">Strong</div>
 </div>
-<input type="range" class="form-range col-4" onchange="myFunction1()" min="0" max="6" value="5" id="customRange">
+<input type="range" class="form-range col-4" onchange="CoffeeChangeByInput('rangeInput',this.value)" min="0" max="6" value="3" id="customRange">
 
 </section>
 <script> 
 const liqPar = {MilliLiters:1,Liters:1000,Gallon:3785.411784,Quarts:946.352946,Cups:226.796,Ounces:28.3495}
 const solPar = {Grams:1,Ounces:28.35,Cups:0.23,Kilos:1000,Pounds:453.592}
 const cofficient={'1:13':13,"1:14":14,'1:15':15,'1:16':16,'1:17':17,'1:18':18,'1:19':19}
+const rangeCof={'1:13':0,"1:14":1,'1:15':2,'1:16':3,'1:17':4,'1:18':5,'1:19':6}
 
 var ir =  document.getElementById("inputratio");
 const r = document.getElementById('customRange');
@@ -85,9 +86,6 @@ const w = document.getElementById('inputwater');
 const ws =  document.getElementById("waterSelect");
 const gcs = document.getElementById("gcoffeeSelect");
 const bcs = document.getElementById("bcoffeeSelect");
-var wOldVal;
-var gcOldVal
-var bcOldVal;
 
 function mathFunction(whatfor,oldValue,value){
 
@@ -102,80 +100,14 @@ function mathFunction(whatfor,oldValue,value){
     }
 }
 
-// function mathFunction(whatfor)
-
-function myFunction() {
-    var sx =  document.getElementById("inputratio").value;
-    console.log(sx);
-    if (sx=="1:14"){
-        document.getElementById('inputgcoffee').value = 5.71;
-        document.getElementById('inputBcoffee').value = 68.61;
-        document.getElementById('customRange').value=1;
-    }else if (sx=="1:13"){
-        document.getElementById('inputgcoffee').value = 6.15;
-        document.getElementById('inputBcoffee').value = 67.73;
-        document.getElementById('customRange').value=0;
-    }else if (sx=="1:15"){
-        document.getElementById('inputgcoffee').value = 5.33;
-        document.getElementById('inputBcoffee').value = 69.37;
-        document.getElementById('customRange').value=2;
-    }else if (sx=="1:16"){
-        document.getElementById('inputgcoffee').value = 5.00;
-        document.getElementById('inputBcoffee').value = 70.03;
-        document.getElementById('customRange').value=3;
-    }else if (sx=="1:17"){
-        document.getElementById('inputgcoffee').value = 4.71;
-        document.getElementById('inputBcoffee').value = 70.60;
-        document.getElementById('customRange').value=4;
-    }else if (sx=="1:18"){
-        document.getElementById('inputgcoffee').value = 4.44;
-        document.getElementById('inputBcoffee').value = 71.14;
-        document.getElementById('customRange').value=5;
-    }else if (sx=="1:19"){
-        document.getElementById('inputgcoffee').value = 4.21;
-        document.getElementById('inputBcoffee').value = 71.60;
-        document.getElementById('customRange').value=6;
-    }else {
-        console.log('else');
-    }
-}
-
-
-function myFunction1() {
-    var sx =  document.getElementById("customRange").value;
-    // var rx = document.getElementById('inputratio').value;
-    console.log('rx');
-    if (sx==1){
-        document.getElementById('inputgcoffee').value = 5.71;
-        document.getElementById('inputBcoffee').value = 68.61;
-        document.getElementById('inputratio').value="1:14";
-    }else if (sx==0){
-        document.getElementById('inputgcoffee').value = 6.15;
-        document.getElementById('inputBcoffee').value = 67.73;
-        document.getElementById('inputratio').value="1:13";
-    }else if (sx==2){
-        document.getElementById('inputgcoffee').value = 5.33;
-        document.getElementById('inputBcoffee').value = 69.37;
-        document.getElementById('inputratio').value="1:15";
-    }else if (sx==3){
-        document.getElementById('inputgcoffee').value = 5.00;
-        document.getElementById('inputBcoffee').value = 70.03;
-        document.getElementById('inputratio').value="1:16";
-    }else if (sx==4){
-        document.getElementById('inputgcoffee').value = 4.71;
-        document.getElementById('inputBcoffee').value = 70.60;
-        document.getElementById('inputratio').value="1:17";
-    }else if (sx==5){
-        document.getElementById('inputgcoffee').value = 4.44;
-        document.getElementById('inputBcoffee').value = 71.14;
-        document.getElementById('inputratio').value="1:18";
-    }else if (sx==6){
-        document.getElementById('inputgcoffee').value = 4.21;
-        document.getElementById('inputBcoffee').value = 71.60;
-        document.getElementById('inputratio').value="1:19";
-    }else {
-        console.log('else');
-    }
+function getKeyByValue(object, value) { 
+    for (var prop in object) { 
+        if (object.hasOwnProperty(prop)) { 
+            if (object[prop] == value){
+                return prop; 
+            }
+        } 
+    } 
 }
 
 function myFunction2(type,value,oldValue){
@@ -200,20 +132,11 @@ function CoffeeChange(mf,changingKey){
     changingKey.value = (changingKey.value * mf).toFixed(2);
 }
 
-function CoffeeChangefrom0(mf,changingKey,value){
-    changingKey.value = (value * mf).toFixed(2);
-}
-
 function CoffeeChangeByInput(whatfor,val){
     if (whatfor == "waterInput"){
-
-        console.log('val='+val+', cof='+cofficient[ir.value]+', val*cof='+val / cofficient[ir.value]);
         gc.value = (val / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2);
 
-        console.log('cofee change by input val='+val+', liq='+liqPar[bcs.value]+', cif='+cofficient[ir.value]+', full='+(liqPar[ws.value]*val - (1.995*val*liqPar[ws.value]/cofficient[ir.value])));
-
         bc.value = ((liqPar[ws.value]*val - (1.995*val*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2);
-        console.log(bc.value); 
 
     }else if(whatfor=="gcInput"){
         console.log('elseif bc')
@@ -221,48 +144,24 @@ function CoffeeChangeByInput(whatfor,val){
         bc.value = ((liqPar[ws.value]*w.value - (1.995*w.value*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2);
         
     }else if(whatfor=="bcInput"){
-        
-    }
-}
+        w.value = (val*liqPar[bcs.value]*cofficient[ir.value]/((cofficient[ir.value]-1.995)*liqPar[ws.value])).toFixed(2);
+        gc.value = (w.value / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2);
+    }else if(whatfor=="ratioInput"){
+        gc.value = (w.value / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2);
 
-function myFunction3(type,value){
-    // console.log('new = '+value+", y = "+oldValue);
-    // console.log(oldValue.length==0);
-    // console.log(value);
-    // console.log(value);
-    // console.log(value);
-    if(value.length!=0 && typeof(value)!='undefined' && value!=0){
-        console.log('if');
-        // var mf = mathFunction('input',oldValue,value);
-        CoffeeChangeByInput(type,value);
-        // CoffeeChange(mf,bc);
-    }else{
-        w.value="";
-        bc.value="";
-        gc.value="";
+        bc.value = ((liqPar[ws.value]*w.value - (1.995*w.value*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2);
+
+        r.value = rangeCof[val];
+    }else if(whatfor=="rangeInput"){
+        var x = getKeyByValue(rangeCof,val);
+        ir.value=x;
+        gc.value = (w.value / cofficient[ir.value] * liqPar[ws.value]/solPar[gcs.value]).toFixed(2);
+
+        bc.value = ((liqPar[ws.value]*w.value - (1.995*w.value*liqPar[ws.value]/cofficient[ir.value]))/liqPar[bcs.value]).toFixed(2);
     }
-    // else if(oldValue.length>0 && (value.length==0 || typeof(value)=='undefined' || value.length==0 || value==0)){
-    //     wOldVal = oldValue;
-    //     gcOldVal=gc.value;
-    //     bcOldVal=bc.value;
-    //     // console.log('elseif w='+wOldVal+', gc='+gcOldVal+',bc='+bcOldVal);
-    //     gc.value''';
-    //     bc.value='';
-    // }else if(oldValue.length==0 && (typeof(value)!='undefined' && value.length!=0 && value!=0)){
-    //     var mf = mathFunction('input',wOldVal,value);
-    //     console.log('value='+value,'old='+wOldVal+','+',gc='+gcOldVal+mf);
-    //     CoffeeChangefrom0(mf,gc,gcOldVal);
-    //     CoffeeChangefrom0(mf,bc,bcOldVal);
-    // }
-    
 }
 
 </script>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(function(){
-    $("#includedContent").load("footer.html");
-    });
-</script> -->
+
 </body>
 </html>
