@@ -12,7 +12,14 @@
 
 </head>
 <body>
-    <style>body, input , select{font-family: 'Lato', sans-serif;font-weight: bold!important;}.text-right{text-align: right;}.px-10{padding-left:10%;padding-right:10%;}.cursive{font-family: 'Lobster', cursive;} @media(max-width:500px){.px-10{padding-left:5px;padding-right:5px;}}</style>
+    <style>body, input , select{font-family: 'Lato', sans-serif;font-weight: bold!important;}.text-right{text-align: right;}.px-10{padding-left:10%;padding-right:10%;}.cursive{font-family: 'Lobster', cursive;}
+    .form-select1{display: block;
+    width: 100%; padding: .8rem 2.25rem .8rem .75rem; font-size: 1rem; line-height: 1.5; color: #212529; background-color: #fff; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right .75rem center;background-size: 16px 12px; border: none;box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);border-radius: .25rem; -webkit-appearance: none;-moz-appearance: none; appearance: none;}
+
+   input{display: block; width: 100%; padding: .8rem .75rem; font-size: 1rem; line-height: 1.5; color: #212529; background-color: #fff; border: none;box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);border-radius: .25rem;}
+ .row {align-items: center!important;}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0;}input[type=number] {-moz-appearance: textfield;}
+     @media(max-width:500px){.px-10{padding-left:10px;padding-right:5px;}.col-4{padding-left:5px;padding-right:5px;}}</style>
 <!-- 
     <iframe height="435px" src="https://potri.in/index1" width="100%"></iframe> -->
 
@@ -24,7 +31,7 @@
         <div class="row m-0 py-3">
             
           <label for="inputratio" class="col-4">Ratio (coffee:Water)</label>
-          <div class="col-8"><select id="inputratio" class="form-select"  onchange="CoffeeChangeByInput('ratioInput',this.value)">
+          <div class="col-8"><select id="inputratio" class="form-select1"  onchange="CoffeeChangeByInput('ratioInput',this.value)">
             <option id="0">1:13</option><option id="1">1:14</option><option id="2">1:15</option><option id="3" selected>1:16</option><option id="4">1:17</option><option id="5">1:18</option><option id="6">1:19</option>
           </select></div>
           
@@ -32,13 +39,13 @@
 
 
         <!-- Water -->
-        <div class="row m-0 py-3">
+        <div class="row m-0 py-3 align-items-center">
           <label for="inputwater" class="col-4">Water</label>
           <div class="col-4">
-              <input type="number" class="form-control" id="inputwater" value="80" onkeyUp="CoffeeChangeByInput('waterInput',this.value)">
+              <input type="number" class="form-control1" id="inputwater" value="80" onkeyUp="CoffeeChangeByInput('waterInput',this.value)">
         </div>
           <div class="col-4">
-              <select id="waterSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('waterSelect',this.value, this.oldValue);this.oldValue = this.value;">
+              <select id="waterSelect" class="form-select1 col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('waterSelect',this.value, this.oldValue);this.oldValue = this.value;">
                 <option selected>Milliliters</option><option>Ounces</option><option>Cups</option><option id="3">Quarts</option><option>Liters</option><option>Gallon</option>
                 </select>
             </div>
@@ -48,8 +55,8 @@
         <!-- groundcoffee -->
         <div class="row m-0 py-3">
             <label for="inputgcoffee" class="col-4">Ground Coffee</label>
-            <div class="col-4"><input type="number" class="form-control" id="inputgcoffee" value="5" onkeyUp="CoffeeChangeByInput('gcInput',this.value)"></div>
-            <div class="col-4"><select id="gcoffeeSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('gcoffeeSelect',this.value, this.oldValue);this.oldValue = this.value;">
+            <div class="col-4"><input type="number" class="form-control1" id="inputgcoffee" value="5" onkeyUp="CoffeeChangeByInput('gcInput',this.value)"></div>
+            <div class="col-4"><select id="gcoffeeSelect" class="form-select1 col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('gcoffeeSelect',this.value, this.oldValue);this.oldValue = this.value;">
                 <option selected>Grams</option><option>Ounces</option><option>Tablespoons</option><option>Cups</option><option id="3">Kilos</option><option>Pounds</option>
               </select>
             </div>
@@ -58,8 +65,8 @@
     <!-- Brewed coffee -->
         <div class="row m-0 py-3">
             <label for="inputBcoffee" class="col-4">Brewed Coffee</label>
-            <div class="col-4"><input type="number" class="form-control" id="inputBcoffee" value="70.03" onkeyUp="CoffeeChangeByInput('bcInput',this.value)"></div>
-            <div class="col-4"><select id="bcoffeeSelect" class="form-select col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('bcoffeeSelect',this.value, this.oldValue);this.oldValue = this.value;">
+            <div class="col-4"><input type="number" class="form-control1" id="inputBcoffee" value="70.03" onkeyUp="CoffeeChangeByInput('bcInput',this.value)"></div>
+            <div class="col-4"><select id="bcoffeeSelect" class="form-select1 col-4" onfocus="this.oldValue = this.value;" onchange="myFunction2('bcoffeeSelect',this.value, this.oldValue);this.oldValue = this.value;">
                 <option selected>Milliliters</option><option>Ounces</option><option>Cups</option><option id="3">Quarts</option><option>Liters</option><option>Gallon</option>
               </select>
             </div>
