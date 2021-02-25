@@ -87,10 +87,10 @@ function removeDecimal(val,changingKey){
     changingKey.value=val;
     // console.log(Number(val).toFixed());
     if (Number(val)==Number(val).toFixed()){
-        console.log('remove decimal if changing key'+changingKey.id);
+        // console.log('remove decimal if changing key'+changingKey.id);
         changingKey.value=Number(val).toFixed(0);
     }else{
-        console.log('else removedecimal changing key'+changingKey.id);
+        // console.log('else removedecimal changing key'+changingKey.id);
         changingKey.value=val;
     }
 }
