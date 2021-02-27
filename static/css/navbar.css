@@ -19,6 +19,8 @@ div.navbar-collapse ul.navbar-nav{padding-left: 1rem;padding-right: 1rem;}
     .navbar-collapse {position: absolute; z-index: 1000; background-color: white; width: 100%; top: 4.5rem;left:0; }
 
 }
-
+@media (max-width:500px){
+    .nav-icon-text{display: none;}
+}
 
 
