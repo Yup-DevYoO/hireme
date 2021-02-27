@@ -34,6 +34,7 @@ h1
 .btn-icon{margin-right:0.4rem;}
 .owl-carousel button.owl-dot{width: 0.6rem; height: 0.6rem;background-color: red;opacity:0.2;margin-left: 0.2rem;margin-right: 0.2rem;border-radius: 50%;}
 .owl-carousel button.owl-dot.active{opacity:0.5;}
+.teachers-column{display: none;}
 
 @media (max-width:990px){
 }
