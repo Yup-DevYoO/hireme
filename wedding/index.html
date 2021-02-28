@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Lobster&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="assets/owl/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/owl/css/owl.theme.default.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
 </head>
@@ -25,18 +26,33 @@
               
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">home</a>
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
+
               <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#">Plan your wedding</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">plan wedding</a>
-              </li><li class="nav-item">
-                <a class="nav-link" href="#">events</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  About us
+                  <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Who we are</a></li>
+                  <li><a class="dropdown-item" href="#">Recent services</a></li>
+                  <li><a class="dropdown-item" href="#">Testimonial</a></li>
+                </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">who we are</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                  <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Place selection</a></li>
+                  <li><a class="dropdown-item" href="#">Event management</a></li>
+                  <li><a class="dropdown-item" href="#">Something more here</a></li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contacts</a>
@@ -73,58 +89,138 @@
     </div>
 </div>
 
-<div class="container-fluid destination-container m-0 p-0">
-    <div class="row destination-row py-5 px-2 px-md-4 m-0 align-items-center justify-content-around">
-        <div class="col-lg-5 col-12 p-0 text-center">
+<!-- form -->
+<div class="container-fluid py-4 px-0">
+  <div class="row m-0 justify-content-around align-items-center px-3">
+    <div class="col-lg-5 col-md-10 col-12 py-3 text-center" id="destination-col">
+      <h1 style="font-weight: bold;">Choose destination</h1>
+      <div class="pt-4 text-center">
+          <div class="btn-group shadow m-2 destination-btn">
+              <button class="btn btn-lg" id="destinationBtn-1" onclick="showlocations('destinationBtn-1','destinationBtn-2')" type="button">
+              I have destination in mind
+              </button>
+          </div>
+      </div>
+      <div class="text-center">
+          <div class="btn-group shadow m-2 destination-btn">
+              <button class="btn btn-lg" id="destinationBtn-2" onclick="showlocations('destinationBtn-2','destinationBtn-1')" type="button">
+              I need suggestions for destination
+              </button>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-10 col-12 pl-3 pb-5 pt-4">
+
+      <form class="row g-3">
+        <div class="col-12">
+          <div class="input-group">
+            <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+            <input type="text" class="form-control" id="name" placeholder="your name">
+          </div>
+          <div class="input-group">
+            <div class="input-group-text"><i class="bi bi-telephone-fill"></i></div>
+            <input type="number" class="form-control" id="mobilenum" placeholder="mobile number">
+          </div>
+
+          <div class="input-group">
+            <div class="input-group-text"><i class="bi bi-people-fill"></i></div>
+            <input type="number" class="form-control" id="guestnum" placeholder="number of guest">
+          </div>
 
 
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel"  data-bs-interval="4000">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="brows-img" src="assets/img/wedding.jfif" alt="">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="brows-img" src="assets/img/wedding2.jpg" alt="">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="brows-img" src="assets/img/wedding.jfif" alt="">
-                  </div>
+          <div class="owl-carousel my-" id="tophotel">
+            <div city="bombey">
+              <div class="card" style="width: 9rem;" onclick="saveIt('hotel','krishna hotel',this,'city-div')">
+                <img src="assets/img/h3.jpg" class="card-img-top" alt="...">
+                <div class="card-body py-1 px-1">
+                  <h5 class="card-title hotel-title-small">krishna hotel</h5>
+                  <p class="card-text hotel-des-small">Bombey, Rajisthan</p>
                 </div>
               </div>
-
-
-
-
-<!-- 
-            <img class="brows-img" src="assets/img/wedding.jfif" alt=""> -->
-
-        </div>
-        <div class="col-lg-5 col-12 px-4 pt-4 text-center" id="destination-col">
-            <h1 style="font-weight: bold;">Choose destination</h1>
-            <div class="pt-4 text-center">
-                <div class="btn-group shadow m-2 destination-btn">
-                    <button class="btn btn-lg" id="destinationBtn-1" onclick="showlocations('destinationBtn-1','destinationBtn-2')" type="button">
-                    I have destination in mind
-                    </button>
-                </div>
             </div>
-            <div class="text-center">
-                <div class="btn-group shadow m-2 destination-btn">
-                    <button class="btn btn-lg" id="destinationBtn-2" onclick="showlocations('destinationBtn-2','destinationBtn-1')" type="button">
-                    I need suggestions for destination
-                    </button>
+
+
+            <div city="delhi">
+              <div class="card" style="width: 9rem;" onclick="saveIt('hotel','Raj palace',this,'city-div')">
+                <img src="assets/img/h5.jfif" class="card-img-top" alt="...">
+                <div class="card-body py-1 px-1">
+                  <h5 class="card-title hotel-title-small">Raj palace</h5>
+                  <p class="card-text hotel-des-small">Delhi</p>
                 </div>
+              </div>
             </div>
+
+            <div city="jaipur">
+              <div class="card" style="width: 9rem;" onclick="saveIt('hotel','ITC hotel',this,'city-div')">
+                <img src="assets/img/h1.jpg" class="card-img-top" alt="...">
+                <div class="card-body py-1 px-1">
+                  <h5 class="card-title hotel-title-small">ITC hotel</h5>
+                  <p class="card-text hotel-des-small">Jaipur, Rajisthan</p>
+                </div>
+              </div>
+            </div>
+
+            <div city="bombey">
+              <div class="card" style="width: 9rem;" onclick="saveIt('hotel','krishna hotel',this,'city-div')">
+                <img src="assets/img/h3.jpg" class="card-img-top" alt="...">
+                <div class="card-body py-1 px-1">
+                  <h5 class="card-title hotel-title-small">krishna hotel</h5>
+                  <p class="card-text hotel-des-small">Bombey, Maharashtra</p>
+                </div>
+              </div>
+            </div>
+
+            <div city="goa">
+              <div class="card" style="width: 9rem;" onclick="saveIt('hotel','Vandna palace',this,'city-div')">
+                <img src="assets/img/h2.jpg" class="card-img-top" alt="...">
+                <div class="card-body py-1 px-1">
+                  <h5 class="card-title hotel-title-small">Vandna palace</h5>
+                  <p class="card-text hotel-des-small">Goa</p>
+                </div>
+              </div>
+            </div>
+
+            <div city="delhi">
+              <div class="card" style="width: 9rem;" onclick="saveIt('hotel','Golden palace',this,'city-div')">
+                <img src="assets/img/h5.jfif" class="card-img-top" alt="...">
+                <div class="card-body py-1 px-1">
+                  <h5 class="card-title hotel-title-small">Golden palace</h5>
+                  <p class="card-text hotel-des-small">Delhi</p>
+                </div>
+              </div>
+            </div>
+
+            <div city="jaipur">
+              <div class="card" style="width: 9rem;" onclick="saveIt('hotel','Royal palace',this,'city-div')">
+                <img src="assets/img/h1.jpg" class="card-img-top" alt="...">
+                <div class="card-body py-1 px-1">
+                  <h5 class="card-title hotel-title-small">Royal palace</h5>
+                  <p class="card-text hotel-des-small">Jaipur, Rajisthan</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="input-group shadow py-3 px-3 mt-5" style="width:fit-content"><button type="submit" class="" style="border:none;font-size:1rem;background: transparent;color:white;">send info</button></div>
+          
         </div>
+      </form>
     </div>
+  </div>
 </div>
+
+
+
+
+
 
 <div class="pt-5 pb-3 px-3 text-left text-white" style="background-color: rgb(57, 180, 139);">
 <h1 class="cursive text-white">I will make this website as good as it can be.</h1>
 <p class="">I have limited time so I send you this as a demo. I will add here:
     <ul>
-    <li>home</li>
-    <li>calculator</li>    
+    <li>Home</li>
+    <li>Calculate</li>    
     <li>your services(in navbar as a dropdown. Tell me what you do)</li>
     <li>your blog(contain two category, news and eventes)</li>
     <li>portfolio</li>
@@ -140,10 +236,47 @@
 <nav><a href="https://potri.in" style="color: rgb(14, 100, 72);">1) a web page is designed by me</a></nav>
 <nav><a href="https://yup-devyoo.github.io/coffee-water/index1.html" style="color: rgb(14, 100, 72);">2)fully functioninal real time calculator.</a></nav>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-    <script src="assets/js/navbar.js"></script>
-    <script src="assets/js/base.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="assets/owl/js/owl.carousel.js"></script>
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/base.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel();
+      // $(".owl-carousel1").owlCarousel();
+    });
+    $('.owl-carousel').owlCarousel({
+      loop:false,
+      margin:20,
+      responsiveClass:true,
+      nav:false,
+      dots:false,
+      autoplay:false,
+      autoplayTimeout:3000,
+      autoplayHoverPause:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          430:{
+              items:2
+          },
+          600:{
+              items:2
+          },
+          900:{
+              items:3
+          },
+          1000:{
+            items:2
+          },
+          1200:{
+              items:3
+          }
+      }
+    });
+  </script>
 
 </body>
 </html>

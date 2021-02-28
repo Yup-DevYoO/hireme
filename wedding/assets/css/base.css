@@ -1,9 +1,33 @@
 body{font-family: 'Lato', sans-serif;}
+.bg-danger, .btn-danger{background: #eb384a; color:white;}
+/* input form */
+input:-internal-autofill-selected{background-color: transparent;}
+.input-group{background: #eb384a; border-radius: 15px;overflow: hidden;padding:8px;margin:1rem 0;}
+.input-group-text,.form-control,.form-control::placeholder{background-color: transparent; border:none; color: white;}
+#tophotel{height: 10rem;padding:1rem;}
+.hotel-title-small{font-size: 0.8rem;font-weight: bold;margin: 0;}
+.hotel-des-small{font-size: 0.7rem;font-weight: bold;margin: 0;}
+.form-control:focus, .form-control:focus .input-group-text, .input-group-text:focus{border:none;background: transparent;outline: none;color:white;box-shadow: none;}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none; margin-bottom: 2px;}
+/* Firefox */
+input[type=number] {-moz-appearance: textfield;}
+
+
+/* choose destination */
 .destination-btn{width: 18rem; background-color: white;}
+.destination-btn:hover, .destination-btn:focus,.destination-btn:active{background-color: #dc3545; transition:all 1.5s ease-out;}
+.destination-btn:hover button, .destination-btn:focus button{color:white;}
+#destination-col h1{padding-left: 1rem;}
 .destination-container{background:url('../../assets/img/wedding1.jpg') no-repeat center;transform: rotate3d(0, 1, 0, 180deg);}
 .front-img{width: 110%;height:110%;border-radius: 0 0 80% 0;}
 .btn-group{border-radius: 6px;padding:0.5rem;}.px-10{padding-left: 10%; padding-right: 10%;}
 .destination-row{background: rgba(255, 255, 255, 0.781);transform: rotate3d(0, 1, 0, -180deg);}
+/* owl-carousel */
+.owl-carousel div div.card img{object-fit: cover;height:7rem;}
+/* .owl-carousel div div.card:hover, .owl-carousel div div.card:focus{transform-box: 1%;} */
+.city-div{border:2px solid #dc3545!important;}
+
 .overlay {
     position: absolute;
     border-radius: 0 0 80% 0;
@@ -31,7 +55,6 @@ h1{font-weight: 900; font-size: 2.5rem;}
 .teacher-card-body nav.span1{color:white;background-color: #dc3545; padding: 0 0.5rem 0.1rem 0.5rem; top:auto;}
 .teacher-card-body nav.span2{color: #dc3545; padding: 0 0.5rem 0.1rem 0.5rem; margin-left:auto}
 .teacher-card-body{height:10rem;}
-.brows-img{width: 100%;}
 .pl-3{padding-left: 1.3rem;}
 .why-choose-us{padding-left: 2rem;}
 .partner-owl-div{object-fit: contain; object-position: center center; height: 80px !important; margin-left: auto; margin-right: auto;}
@@ -46,11 +69,14 @@ h1{font-weight: 900; font-size: 2.5rem;}
 .owl-carousel button.owl-dot.active{opacity:0.5;}
 .teachers-column{display: none;}
 
+/* Bootstrap carousel */
+.brows-img-div{width: 100%;background-size: cover!important;padding-top: 56.25%;overflow: hidden;}
 @media (max-width:990px){
-    .front-img{min-height:35rem;object-fit: cover;}h1{font-size: 2rem;}.brows-img{width: 80%;}
+    .front-img{min-height:35rem;object-fit: cover;}h1{font-size: 2rem;}.brows-img-div{width: 80%;padding-top: 45.625%;}
 }
 @media (max-width:765px){
-    .brows-img{width: 90%;}
+    #destination-col h1{padding-left: 1rem;}
+    .brows-img-div{width: 90%;padding-top: 50.625%;}
     .front-img{border-radius: 0 0 70% 0;}.overlay{border-radius: 0 0 50% 0;}.why-choose-us{padding-left: 0.5rem;padding-right: 0.5rem;}.px-10{padding-left:2px; padding-right:2px;}
     /* .front-position-div{margin-top:5rem;} */
     .front-img{height:25rem;object-fit: cover;}
