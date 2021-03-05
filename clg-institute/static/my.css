@@ -1,0 +1,46 @@
+body{
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.02rem;
+    word-spacing: 0.1rem;
+    font-weight: 100;
+}
+.px-10{padding-left:10%;padding-right: 10%;}
+span.material-icons{vertical-align:middle;}
+.px-8{padding-left:5%;padding-right: 5%;}
+.btn-round{border-radius: 2rem; padding: 0.5rem 1.7rem;}
+h1{
+    font-weight: 600;
+}
+.nav-item{
+    padding-left:0.4rem;
+    color: white;
+}
+.navbar{
+    padding-top: 0.75rem;padding-bottom: 0.75rem;
+}
+.dropdown-item{color: white;}
+
+.row{margin:0;}
+
+.var-center{-ms-transform: translateY(-50%);
+    transform: translateY(-50%);}
+
+/* SCROLL menu */
+section.faculty{position:relative;}
+div.scrollmenu{overflow-x:scroll;white-space:nowrap;overflow-y:auto;} 
+div.scrollmenu .item{display:inline-block;text-align:center;text-decoration:none;padding:15px;letter-spacing:1px;} 
+div.scrollmenu a:hover{background-color:#777;color:white;}
+div.scrollmenu::-webkit-scrollbar{width:0px;display:none;} 
+div.scrollmenu::-webkit-scrollbar-track{background:none;display:none;} 
+div.scrollmenu::-webkit-scrollbar-thumb{background:#fdd998;display:none;} 
+div.scrollmenu::-webkit-scrollbar-thumb:hover{background:none;display:none;} 
+#leftBtn, #rightBtn{position:absolute;bottom:50%;background-color: rgba(16, 131, 139, 0.5); width:3rem;height: 3rem; color:white; border-radius: 50%; border-width: 0;}
+#rightBtn{right:1rem;}
+#leftBtn span, #rightBtn span{font-size: 2.5rem;}  
+
+
+@media(max-width:1000px){
+    .px-10{padding-left:0.8rem;padding-right: 0.8rem;}
+    .nav-item{padding-left: 0;}
+    .px-8{padding-left:0.4rem;padding-right: 0.4rem;}
+}

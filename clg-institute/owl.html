@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link ref="stylesheet" href="static/owl/css/owl.carousel.min.css">
+<link ref="stylesheet" href="static/owl/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="static/owl/css/owl.theme.green.min.css">
+    <link rel="stylesheet" href="static/my.css">
+    <link rel="stylesheet" href="static/project.css" >
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+<style>
+  div.scrollmenu1{overflow-x:scroll;white-space:nowrap;overflow-y:auto;} 
+  div.scrollmenu1 a{display:inline-block;text-align:center;text-decoration:none;padding:15px;letter-spacing:1px;} 
+  div.scrollmenu1 a:hover{background-color:#777;color:white;}
+  div.scrollmenu1::-webkit-scrollbar{width:0px;display:none;} 
+  div.scrollmenu1::-webkit-scrollbar-track{background:none;display:none;} 
+  div.scrollmenu1::-webkit-scrollbar-thumb{background:#fdd998;display:none;} 
+  div.scrollmenu1::-webkit-scrollbar-thumb:hover{background:none;display:none;} 
+</style>
+
+<div class="scrollmenu1">
+  <a>hello</a><a>hello</a><a>hello</a><a>hello</a><a>hello</a><a>hello</a><a>hello</a><a>hello</a><a>hello</a><a>hello</a><a>hello</a><a>hello</a>
+</div>
+<button id="leftBtn">click</button>
+<button id="rightBtn">click</button>
+
+  </body>
+  <script>
+    const scrollWrapper = $('.scrollmenu1');
+
+    scrollWrapper.scrollLeft(0);
+    $('#rightBtn').on('click', function() {
+      scrollWrapper.scrollLeft(scrollWrapper.scrollLeft() + 100);
+    });
+    $('#leftBtn').on('click', function() {
+      scrollWrapper.scrollLeft(scrollWrapper.scrollLeft() - 100);
+    });
+  </script>
+</html>

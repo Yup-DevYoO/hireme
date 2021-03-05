@@ -1,0 +1,19 @@
+.img-container{
+    position: relative;padding-top: 54.25%;
+}
+
+h3, h4, h5, h6{font-weight: 100;}
+
+.img-div{position: absolute;top:0;left: 0;bottom: 0;right: 0;background-size: cover!important;}
+/* .img-div img{width:100%;height:100%;background-repeat: no-repeat;background-size: cover;} */
+/* td{vertical-align: middle;} */
+section.contact div.row div.col-md-5 table tbody tr td span.material-icons{font-size:1.5rem; vertical-align: top; border-radius: 50%;padding:0.5rem; background-color:#ecf9f0; color:#5fcf80;}
+
+section.contact div.row div.col-md-3 table tbody tr td p{font-size: 0.8rem;}
+table tbody tr td h6{margin-bottom: 0.1rem;font-weight: 400;}
+
+@media(max-width:1000px){
+    .img-container{padding-top: 90%;}
+    /* .img-div img{height: 100%;object-fit: cover;background-position: center;
+    object-position: 50% 50%;} */
+}
