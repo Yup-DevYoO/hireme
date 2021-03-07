@@ -9,8 +9,6 @@ responsiveClass:true,
 nav:true,
 dots:false,
 autoplay:false,
-autoplayTimeout:3000,
-autoplayHoverPause:true,
 responsive:{
     0:{
         items:2
