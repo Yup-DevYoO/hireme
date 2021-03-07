@@ -1,0 +1,35 @@
+body{font-family: lato, sans-serif;}.row{margin:0;} .contaner,.container-fluid{margin:0;}
+.main-div{width:100%;object-fit: contain;}.text-light{color:#8d8a8a!important;}h4{margin-bottom: 0; font-weight: lighter;font-size:1.1rem;}.row{margin-right:0;margin-left: 0;}.px-10{padding-left: 10%;padding-right: 10%;}.mcat-img{padding-top:100%;background-size:cover!important;}.mcat-col h6{padding-top:0.5rem;}h1{font-weight:bold;}
+
+.text-right{text-align: right;}
+.teacher-card-body nav{display: inline-block;}
+.teacher-card-body nav.span1{color:white;background-color: #dc3545; padding: 0 0.5rem 0.1rem 0.5rem; top:auto;}
+.teacher-card-body nav.span2{color: #dc3545; padding: 0 0.5rem 0.1rem 0.5rem; margin-left:auto}
+.teacher-card-body{height:11rem;padding-top: 0.6rem;padding-right:0.6rem}
+.brows-img{width: 100%;}
+.pl-3{padding-left: 1.3rem;}
+.why-choose-us{padding-left: 2rem;}
+.partner-owl-div{object-fit: contain; object-position: center center; height: 80px !important; margin-left: auto; margin-right: auto;}
+.popular-card-right-text{left:1rem;border-radius: 0%; max-width: 50%; font-size: 1.2rem; position:absolute; top:1rem;border-radius: 2px;font-weight: bold;text-align: left;}
+.cursive{font-family: 'Lobster', cursive;}
+.card-img-top{height:11rem;object-fit: cover;}
+.card-icon-1, .card-icon-2{width:2.5rem; height:2.5rem; padding-top: 0.3rem; border-radius: 50%; background-color: white; font-size: 1.2rem; position:absolute; top:1rem;right:1rem;}
+.card-icon-1{color:#dc3545;}
+.card{border:none;}
+.text-light1{color:rgb(174, 180, 180);}
+.btn-icon{margin-right:0.4rem;}
+.owl-carousel button.owl-dot{width: 0.6rem; height: 0.6rem;background-color: red;opacity:0.2;margin-left: 0.2rem;margin-right: 0.2rem;border-radius: 50%;}
+.owl-carousel button.owl-dot.active{opacity:0.5;}
+.teachers-column{display: none;}
+.quantity-div i{font-size: 1.9rem; padding-left:0.8rem;padding-right:0.8rem;color:#0b9db1;}.mrp-price{font-size:1rem;text-decoration:line-through;}.offer-price{padding-left:8px;}
+
+/* offer */
+.offer-img-div{width:100%; padding-top: 50%;background-size: cover!important;}.carousel-indicators button{width: 10px!important;height: 10px!important;border-radius: 30%;}
+/* color #0b9db1 #dc3545 #8d8a8a */
+
+@media (max-width:700px){
+.px-10{padding-left: 4px;padding-right: 4px;}
+.card-body{padding:0.5rem 1rem;}
+.teacher-card-body{padding-left:0.5rem!important; padding-right:0.5rem!important;height:11rem;}
+div.teacher-card-body nav{font-size: 0.8rem;}.teacher-card-body .card-title{font-size: 1rem;}.mrp-price{font-size:0.8rem;text-decoration:line-through;}.offer-price{padding-left:8px;font-size: 0.9rem;}.quantity-div i{font-size: 1.5rem; padding-left:0.4rem;padding-right:0.4rem;}.card-icon-1, .card-icon-2{width:2rem; height:2rem;font-size: 1rem;}
+}
