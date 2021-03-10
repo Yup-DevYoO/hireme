@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tittle</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gassets.com">
+    <link rel="preconnect" href="https://fonts.gassets.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Lobster&display=swap" rel="stylesheet">
+
+
+    <!-- my css files -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <style>
+      .cursive{font-family: lobster,cursive;letter-spacing: 2px;}
+      body{font-family: lato, sans-serif;}
+      .btn1{border-radius: 6px;padding: 0.5rem;border:none;color:rgb(97, 80, 57);letter-spacing: 1.5px; background-color: rgba(255, 127, 127, 0.8);}.btn1:hover,.btn:focus,.btn:active{border:none!important;outline: none!important;}.row{background-color: red;color:rgb(131, 105, 69);font-weight: 900;font-size:1.4rem;}
+    </style>
+</head>
+<body>
+  
+<!-- your container -->
+<div class="row m-0 w-100  justify-content-center align-items-center" id="row" style="height: 100vh;">
+  <div class="col-12 text-center">
+    <input type="text" class="p-4 btn1" placeholder="#fff,white,rgba(255,255,255,1);value="#dc3545" id="input" onkeyup="changeColor(this)">
+    <p id="p"></p>
+    <h6>Write any color name, hex value or rgb/rgba value in Input.</h6>
+  </div>
+</div>
+
+<div class="py-3 px-5 m-0" style="background-color: aqua;color: white;">
+  <h5 class="cursive">Hi! I am Rahul </h5><h6> this  simple color tester is created by me. you can use this in your website also.</h6>
+</div>
+<!-- my javascript -->
+<script src="assets/js/navbar.js"></script>
+<script>
+
+
+  function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    let c = result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+    if (c!=null){
+      if (c.r==null){
+        c.r=0;
+      }
+      if (c.g==null){
+        c.g=0;
+      }
+      if (c.b==null){
+        c.b=0;
+      }
+    }
+    return c
+  }
+  function isColor(strColor){
+    let s = new Option().style;
+    s.color = strColor;
+    return s.color == strColor;
+  }
+
+  function checkHex(color) {
+      z = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
+      if(z==true){
+        return hexToRgb(color);
+      }else{
+        return false
+      } 
+  }
+
+  function checkRgba(color) {
+      return /(^(rgb|hsl)(a?)[(]\s*([\d.]+\s*%?)\s*,\s*([\d.]+\s*%?)\s*,\s*([\d.]+\s*%?)\s*(?:,\s*([\d.]+)\s*)?[)]$)/i.test(color);
+  }
+
+// var color = color1.value;
+
+// if (checkHex(color) || colorNameToHex(color)) {
+//     ctx.fillStyle = color;
+// } else {
+//     ctx.fillStyle = "#000000";
+// }
+
+
+
+
+  const row = document.getElementById("row");
+  const input = document.getElementById("input");
+  function changeColor(object){
+    x = isColor(object.value);
+    hexa = checkHex(object.value);
+    if (x==true || hexa!=false || checkRgba(object.value)==true){
+      row.style.backgroundColor = object.value;
+      if(hexa!=false&&hexa!=null){
+        document.getElementById("p").innerHTML="rgba( "+hexa.r+","+hexa.g+","+hexa.b+",0 )";
+      }
+    }
+  }
+</script>
+</body>
+</html>
