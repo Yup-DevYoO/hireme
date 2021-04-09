@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <!-- Stylesheets
+	============================================= -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Document Title
+	============================================= -->
+    <title>Modal &amp; Popovers | Canvas</title>
+
+</head>
+
+<body class="stretched">
+
+    <!-- Document Wrapper
+	============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+		============================================= -->
+        <header id="header" class="full-header">
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                    <!-- Logo
+					============================================= -->
+                    <div id="logo">
+                        <a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img
+                                src="images/logo.png" alt="Canvas Logo"></a>
+                        <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img
+                                src="images/logo@2x.png" alt="Canvas Logo"></a>
+                    </div><!-- #logo end -->
+
+                    <!-- Primary Navigation
+					============================================= -->
+                    <nav id="primary-menu">
+
+
+                    </nav><!-- #primary-menu end -->
+
+                </div>
+
+            </div>
+
+        </header><!-- #header end -->
+
+        <!-- Page Title
+		============================================= -->
+        <section id="page-title">
+
+            <div class="container clearfix">
+                <h1>Modal &amp; Popovers</h1>
+                <span>Get Attention of your Visitors</span>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Shortcodes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Modal &amp; Popovers</li>
+                </ol>
+            </div>
+
+        </section><!-- #page-title end -->
+
+        <!-- Content
+		============================================= -->
+        <section id="content">
+
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+
+                    <!-- Postcontent
+					============================================= -->
+                    <div class="postcontent nobottommargin clearfix">
+
+
+                        <!-- Large modal -->
+                        <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"><i
+                                class="icon-calculator1"></i> Pricecalculator</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-body">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Sandblastfoil price calculator
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-widget">
+
+                        <div class="form-result"></div>
+
+                        <div class="row">
+                            <div class="col-lg-4 order-lg-1 mb-4">
+                                <div class="card bg-light topmargin-sm">
+                                    <div class="card-body">
+                                        <h4 class="mb-3 d-block"> square m&sup2;</h4>
+                                        <h2 class="meters h1 t600">0 m&sup2;</h2>
+                                        <div class="line line-sm"></div>
+                                        <h4 class="mb-3 d-block">price incl tax</h4>
+                                        <h2 class="car-rent-price h1 t600">€0</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-8">
+                                <form id="foilcalculator" class="row" action="include/form.php"
+                                    method="post" enctype="multipart/form-data">
+                                    <div class="form-process"></div>
+                                    <div class="col-12">
+                                        <label>Select foil</label>
+                                        <br><br>
+                                        <div class="row  btn-group">
+                                            <label class=" pr-0 col-12 col-md-4">
+                                                <div class="ml-0">
+                                                    <img src="images/opmaat.jpg" height="150px" title="op maat gesneden rechthoeken in mm" alt="op maat">
+                                                    <input type="radio" name="selected-foil"
+                                                        class="required" id="op-maat"
+                                                        autocomplete="off" data-price="40"
+                                                        value="op-maat" checked> on size
+
+                                                </div>
+
+                                            </label>
+
+                                            <label class=" px-0 col-12 col-md-4">
+                                                <div class="ml-0">
+                                                    <img src="images/raamvorm.jpg" height="150px"  title="in een specifieke vorm zoals cirkel, driehoek, enz..." alt="andere vormen">
+                                                    <input type="radio" name="selected-foil"
+                                                        class="required" id="andere-vormen"
+                                                        autocomplete="off" data-price="50"
+                                                        value="andere-vormen"> other shapes
+
+                                                </div>
+                                            </label>
+
+                                            <label class=" px-0 col-12 col-md-4">
+                                                <div class="ml-3 ml-md-2">
+                                                    <img src="images/metlogo.jpg" height="150px" title="uitgesneden met een logo of tekening" alt="met logo of tekening">
+                                                    <input type="radio" name="selected-foil"
+                                                        class="required" id="met-logo"
+                                                        autocomplete="off" data-price="70"
+                                                        value="met-logo"> with logo or drawing
+
+                                                </div>
+                                            </label>
+
+
+                                        </div>
+                                        <br><br>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <label for="breedte">Width: in
+                                                    millimeter</label>
+                                                <input type="text" name="breedte" id="breedte"
+                                                    class="form-control  required" value=""
+                                                    placeholder="in millimeter &lpar;mm&rpar;">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <label for="hoogte">Height: in
+                                                    millimeter</label>
+                                                <input type="text" name="hoogte" id="hoogte"
+                                                    class="form-control " value=""
+                                                    placeholder="in millimeter &lpar;mm&rpar;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <label for="breedte">Ammount</label>
+                                                <input type="text" name="aantal" id="aantal"
+                                                    class="form-control  required" value=""
+                                                    placeholder="Many pieces">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+
+                                            </div>
+                                        </div>
+                                        <br><br>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-12 form-group" id="deliver-option">
+                                                <label for="car-rental-pickup-address"
+                                                    class="mb-3">deliver with or without placement<small
+                                                        class="text-danger">*</small></label><br>
+                                                <div class="btn-group my-tab btn-group-toggle nav"
+                                                    data-toggle="buttons">
+                                                    <a href=""
+                                                        class="btn btn-outline-secondary flex-fill"
+                                                        data-toggle="tab">
+                                                        <input type="radio" name="afhalen"
+                                                            id="afhalen" class="required"
+                                                            value="">pickup
+                                                    </a>
+                                                    <a href="#tab-leveren"
+                                                        class="btn btn-outline-secondary flex-fill"
+                                                        data-toggle="tab">
+                                                        <input type="radio" name="levering"
+                                                            id="levering" class="required"
+                                                            value="">deliver
+                                                    </a>
+                                                    <a href="#tab-plaatsen"
+                                                        class="btn btn-outline-secondary flex-fill"
+                                                        data-toggle="tab">
+                                                        <input type="radio" name="plaatsing"
+                                                            id="plaatsing" class="required"
+                                                            value="">Placing
+                                                    </a>
+                                                </div>
+
+                                                <div class="tab-content">
+                                                    <div class="tab-pane fade mt-3"
+                                                        id="tab-leveren">
+                                                        <label>Select Country:</label>
+                                                        <select class="form-control required"
+                                                            name="land" id="land">
+                                                            <option value="0">Select Country
+                                                            </option>
+                                                            <option value="BE">Belgie</option>
+                                                            <option value="DE">Duitsland
+                                                            </option>
+                                                            <option value="FR">Frankrijk
+                                                            </option>
+                                                            <option value="NL">Nederland
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="tab-pane fade mt-3"
+                                                        id="tab-plaatsen">
+                                                        <label>Select Province:</label>
+                                                        <select class="form-control required"
+                                                            name="provincie" id="provincie">
+                                                            <option value="0">Selecteer
+                                                                Provincie</option>
+                                                            <option value="ANT-BE">Antwerpen
+                                                                &lpar;BE&rpar; </option>
+                                                            <option value="LIM-BE">Limburg
+                                                                &lpar;BE&rpar; </option>
+                                                            <option value="OOST-BE">
+                                                                Oost-Vlaanderen &lpar;BE&rpar;
+                                                            </option>
+                                                            <option value="VLBR-BE">
+                                                                Vlaams-Brabant &lpar;BE&rpar;
+                                                            </option>
+                                                            <option value="WVLD-BE">
+                                                                West-Vlaanderen &lpar;BE&rpar;
+                                                            </option>
+                                                            <option value="WABR-BE">
+                                                                Waals-Brabant &lpar;BE&rpar;
+                                                            </option>
+                                                            <option value="HENE-BE">Henegouwen
+                                                                &lpar;BE&rpar; </option>
+                                                            <option value="LUIK-BE">Luik
+                                                                &lpar;BE&rpar; </option>
+                                                            <option value="LUX-BE">Luxemburg
+                                                                &lpar;BE&rpar; </option>
+                                                            <option value="NAMEN-BE">Namen
+                                                                &lpar;BE&rpar; </option>
+                                                            <option value="GELD-NL">Gelderland
+                                                                &lpar;NL&rpar; </option>
+                                                            <option value="LIM-NL">Limburg
+                                                                &lpar;NL&rpar; </option>
+                                                            <option value="NOBR-NL">
+                                                                Noord-Brabant &lpar;NL&rpar;
+                                                            </option>
+                                                            <option value="ZEE-NL">Zeeland
+                                                                &lpar;NL&rpar; </option>
+                                                            <option value="ZUHO-NL">Zuid-Holland
+                                                                &lpar;NL&rpar; </option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div> <br><br>
+                                    </div>
+
+
+                                    <div class="col-md-12 form-group" id="logo-drawing-op">
+                                        <label for="car-rental-dropoff-address"
+                                            class="mb-3">Logo&apos;s or drawings to redraw  &lpar;Vectorize&rpar;<small
+                                                class="text-danger">*</small></label><br>
+                                        <div class="btn-group my-tab btn-group-toggle nav"
+                                            data-toggle="buttons">
+                                            <a href=""
+                                                class="btn btn-outline-secondary flex-fill"
+                                                data-toggle="tab">
+                                                <input type="radio"
+                                                    name="vectorizeren"
+                                                    id="logoja"
+                                                    value="logoja">yes
+                                            </a>
+                                            <a href=""
+                                                class="btn btn-outline-secondary flex-fill"
+                                                data-toggle="tab">
+                                                <input type="radio"
+                                                    name="vectorizeren"
+                                                    id="logonee" value="logonee">no
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <label for="aantaltekeningen">many drawings</label>
+                                                <input type="text" name="aantaltekeningen" id="aantaltekeningen"
+                                                    class="form-control" value=""
+                                                    placeholder="many pieces">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+
+                                            </div>
+                                        </div>
+                                        <br><br>
+                                    </div>
+
+                                    <div class="col-md-6 form-group mb-4" id="squeeze">
+                                        <label class="mb-3">Squeezee</label><br>
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label for="website-cost-google-analytics" class="btn btn-outline-secondary px-3 t600 ls0 nott">
+                                                <input type="radio" name="rakel" id="rakelja" class="required" data-price="1000" autocomplete="off" value="Yes"> Yes
+                                            </label>
+                                            <label for="website-cost-google-analytics" class="btn btn-outline-secondary px-3 t600 ls0 nott">
+                                                <input type="radio" name="rakel" id="rakelnee" class="required" checked data-price="0" autocomplete="off" value="No"> No
+                                            </label>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-12 mt-2 mb-3">
+                                        <div class="card p-3 bg-light">
+                                            <div class="car-body">
+                                                <h3 class="mb-2">Deze prijs is indicatief</h3>
+                                                <p class="mb-0">Deze calculator geeft slechts een richtprijs weer,<br>
+                                                    alles is afhankelijk van de aangeleverde bestanden, verplaatsingen
+                                                    en werkuren.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 hidden">
+                                
+
+
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal">Sluiten</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Small modal -->
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-body">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p class="nobottommargin">Aenean lacinia bibendum nulla sed consectetur.
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                        Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+                    </div><!-- .postcontent end -->
+
+
+
+                </div>
+
+            </div>
+
+        </section><!-- #content end -->
+
+        <!-- Footer
+		============================================= -->
+        <footer id="footer" class="dark">
+
+
+
+            <!-- Copyrights
+			============================================= -->
+            <div id="copyrights">
+
+                <div class="container clearfix">
+
+                    <div class="col_half">
+                        Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
+                        <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                    </div>
+
+                    <div class="col_half col_last tright">
+                        <div class="fright clearfix">
+                            <a href="#" class="social-icon si-small si-borderless si-facebook">
+                                <i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-twitter">
+                                <i class="icon-twitter"></i>
+                                <i class="icon-twitter"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-gplus">
+                                <i class="icon-gplus"></i>
+                                <i class="icon-gplus"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-pinterest">
+                                <i class="icon-pinterest"></i>
+                                <i class="icon-pinterest"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-vimeo">
+                                <i class="icon-vimeo"></i>
+                                <i class="icon-vimeo"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-github">
+                                <i class="icon-github"></i>
+                                <i class="icon-github"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-yahoo">
+                                <i class="icon-yahoo"></i>
+                                <i class="icon-yahoo"></i>
+                            </a>
+
+                            <a href="#" class="social-icon si-small si-borderless si-linkedin">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i
+                            class="icon-headphones"></i> +91-11-6541-6369 <span class="middot">&middot;</span> <i
+                            class="icon-skype2"></i> CanvasOnSkype
+                    </div>
+
+                </div>
+
+            </div><!-- #copyrights end -->
+
+        </footer><!-- #footer end -->
+
+    </div><!-- #wrapper end -->
+
+    <!-- Go To Top
+	============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- External JavaScripts
+	============================================= -->
+    <script src="js/jquery.js"></script>
+    <script src="js/plugins.js"></script>
+
+
+    <!-- DatePicker JS -->
+    <script src="js/components/datepicker.js"></script>
+
+
+
+
+    <!-- Footer Scripts
+	============================================= -->
+    <script src="js/functions.js"></script>
+    <script src="js/calculation.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
