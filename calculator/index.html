@@ -183,6 +183,7 @@
                                                 <input type="text" name="breedte" id="breedte"
                                                     class="form-control  required" value=""
                                                     placeholder="in millimeter &lpar;mm&rpar;">
+                                                    <small id="width-msg" class="form-text text-muted d-none">foil width should be lower than 1150mm</small>
                                             </div>
                                             <div class="col-md-6 form-group">
                                                 <label for="hoogte">Height: in
@@ -190,6 +191,7 @@
                                                 <input type="text" name="hoogte" id="hoogte"
                                                     class="form-control " value=""
                                                     placeholder="in millimeter &lpar;mm&rpar;">
+                                                    <small id="height-msg" class="form-text text-muted d-none">foil height should be lower than 1150mm</small>
                                             </div>
                                         </div>
                                     </div>
@@ -238,7 +240,7 @@
                                                     </a>
                                                 </div>
 
-                                                <div class="tab-content">
+                                                <div class="tab-content" id="tab-content-area">
                                                     <div class="tab-pane fade mt-3"
                                                         id="tab-leveren">
                                                         <label>Select Country:</label>
