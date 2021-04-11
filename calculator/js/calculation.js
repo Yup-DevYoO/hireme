@@ -54,7 +54,7 @@ function whaChecking(){
             foilPrice = selectFoilOption[selectedFoil];
             // console.log(foilPrice);
         }else{
-            foilPrice = selectFoilAboveMultiply[selectedFoil] * (width.value * height.value / 1000000);
+            foilPrice = selectFoilAboveMultiply[selectedFoil] * (width.value * height.value * ammount / 1000000);
             // console.log($('input[name=selected-foil]:checked').val()+'no');
         }
     // console.log(document.getElementById("deliver-option").getElementsByClassName("active")[0].getElementsByTagName("INPUT")[0].name);
