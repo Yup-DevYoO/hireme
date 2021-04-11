@@ -13,7 +13,7 @@ var total = 0;
 
 const selectFoilOption={'op-maat':25,'andere-vormen':30,'met-logo':40};
 //if everthing above 0.5meter square selecteerFolieAbove + width*height*amount* selectFoilAboveMultiply
-const selectFoilAboveMultiply={'op-maat':0.4,'andere-vormen':0.5,'met-logo':0.7}
+const selectFoilAboveMultiply={'op-maat':40,'andere-vormen':50,'met-logo':70}
 
 // ########### plaatsing selection price
 const areaSelection={0:false,'ANT-BE':50,'LIM-BE':100,'OOST-BE':100,'VLBR-BE':150,'WVLD-BE':150,'WABR-BE':150,'HENE-BE':170,'LUIK-BE':170,'LUX-BE':170,'NAMEN-BE':170,'GELD-NL':170,'LIM-NL':150,'NOBR-NL':150,'ZEE-NL':170,'ZUHO-NL':170}
@@ -39,16 +39,12 @@ function checkVal(checkingValue){
 
 
 function whaChecking(){
-    if (checkVal(width) && width.value >= 1150){
+    if (checkVal(width) && width.value >= 1150 && checkVal(height) && height.value >= 1150){
         document.getElementById("width-msg").classList.remove("d-none");
     }else{
         document.getElementById("width-msg").classList.add("d-none");
     }
-    if (checkVal(height) && height.value >= 1150){
-        document.getElementById("height-msg").classList.remove("d-none");
-    }else{
-        document.getElementById("height-msg").classList.add("d-none");
-    }
+    
     if (checkVal(width) && checkVal(height) && checkVal(ammount)){
     wha = width.value * height.value * ammount.value;
     meters.innerHTML = wha/1000000+" m²";
@@ -58,7 +54,7 @@ function whaChecking(){
             foilPrice = selectFoilOption[selectedFoil];
             // console.log(foilPrice);
         }else{
-            foilPrice = selectFoilOption[selectedFoil] + (selectFoilAboveMultiply[selectedFoil] * (width.value * height.value * ammount.value / 100) );
+            foilPrice = selectFoilOption[selectedFoil] + (selectFoilAboveMultiply[selectedFoil] * (width.value * height.value / 1000000) );
             // console.log($('input[name=selected-foil]:checked').val()+'no');
         }
     // console.log(document.getElementById("deliver-option").getElementsByClassName("active")[0].getElementsByTagName("INPUT")[0].name);
