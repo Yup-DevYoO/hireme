@@ -26,8 +26,23 @@ display: flex;
 margin: 10px;
 }
     </style>
-     <script type="text/javascript">
+
+
+<script type="text/javascript">
     
+function myparseFloat(val){
+    changingKey.value=val;
+    // console.log(Number(val).toFixed());
+    if (Number(val)==Number(val).toFixed()){
+        // console.log('remove decimal if changing key'+changingKey.id);
+        return parseInt(Number(val).toFixed(0));
+    }else{
+        // console.log('else removedecimal changing key'+changingKey.id);
+        retur parseFloat(val);
+    }
+}
+
+
 function filterChars(s, charList)
 {
 var s1 = "" + s; // force s1 to be a string data type
@@ -109,7 +124,7 @@ var down2		= numval(document.mainform.down2.value);
 var down3		= numval(document.mainform.down3.value);
 var apr		    = numval(document.mainform.apr.value);
 
-var loanamount = parseFloat(loanAmount-down1);
+var loanamount = myparseFloat(loanAmount-down1);
 var loanmonths = parseFloat(36);
 var monthlyinterest = apr / 12 / 100;
 var monthlypay = (monthlyinterest * loanamount) / (1-(Math.pow((1+monthlyinterest),(-loanmonths))));
@@ -118,7 +133,7 @@ var month361=(monthlypay*100)/100;
 
 document.mainform.month361.value='$'+formatNumber(month361,2,0);
 
-var loanamount = parseFloat(loanAmount-down2);
+var loanamount = myparseFloat(loanAmount-down2);
 var loanmonths = parseFloat(36);
 var monthlyinterest = apr / 12 / 100;
 var monthlypay = (monthlyinterest * loanamount) / (1-(Math.pow((1+monthlyinterest),(-loanmonths))));
@@ -126,7 +141,7 @@ var interestamount =apr;
 var month362=(monthlypay*100)/100;
 document.mainform.month362.value='$'+formatNumber(month362,2,0);
 
-var loanamount = parseFloat(loanAmount-down3);
+var loanamount = myparseFloat(loanAmount-down3);
 var loanmonths = parseFloat(36);
 var monthlyinterest = apr / 12 / 100;
 var monthlypay = (monthlyinterest * loanamount) / (1-(Math.pow((1+monthlyinterest),(-loanmonths))));
@@ -135,7 +150,7 @@ var month363=(monthlypay*100)/100;
 document.mainform.month363.value='$'+formatNumber(month363,2,0);
 
 
-var loanamount = parseFloat(loanAmount-down1);
+var loanamount = myparseFloat(loanAmount-down1);
 var loanmonths = parseFloat(48);
 var monthlyinterest = apr / 12 / 100;
 var monthlypay = (monthlyinterest * loanamount) / (1-(Math.pow((1+monthlyinterest),(-loanmonths))));
@@ -143,7 +158,7 @@ var interestamount =apr;
 var month481=(monthlypay*100)/100;
 document.mainform.month481.value='$'+formatNumber(month481,2,0);
 
-var loanamount = parseFloat(loanAmount-down2);
+var loanamount = myparseFloat(loanAmount-down2);
 var loanmonths = parseFloat(48);
 var monthlyinterest = apr / 12 / 100;
 var monthlypay = (monthlyinterest * loanamount) / (1-(Math.pow((1+monthlyinterest),(-loanmonths))));
@@ -151,7 +166,7 @@ var interestamount =apr;
 var month482=(monthlypay*100)/100;
 document.mainform.month482.value='$'+formatNumber(month482,2,0);
 
-var loanamount = parseFloat(loanAmount-down3);
+var loanamount = myparseFloat(loanAmount-down3);
 var loanmonths = parseFloat(48);
 var monthlyinterest = apr / 12 / 100;
 var monthlypay = (monthlyinterest * loanamount) / (1-(Math.pow((1+monthlyinterest),(-loanmonths))));
@@ -160,7 +175,7 @@ var month483=(monthlypay*100)/100;
 document.mainform.month483.value='$'+formatNumber(month483,2,0);
 
 
-var loanamount = parseFloat(loanAmount-down1);
+var loanamount = myparseFloat(loanAmount-down1);
 var loanmonths = parseFloat(60);
 var monthlyinterest = apr / 12 / 100;
 var monthlypay = (monthlyinterest * loanamount) / (1-(Math.pow((1+monthlyinterest),(-loanmonths))));
@@ -168,7 +183,7 @@ var interestamount =apr;
 var month601=(monthlypay*100)/100;
 document.mainform.month601.value='$'+formatNumber(month601,2,0);
 
-var loanamount = parseFloat(loanAmount-down2);
+var loanamount = myparseFloat(loanAmount-down2);
 var loanmonths = parseFloat(60);
 var monthlyinterest = apr / 12 / 100;
 var monthlypay = (monthlyinterest * loanamount) / (1-(Math.pow((1+monthlyinterest),(-loanmonths))));
@@ -176,7 +191,7 @@ var interestamount =apr;
 var month602=(monthlypay*100)/100;
 document.mainform.month602.value='$'+formatNumber(month602,2,0);
 
-var loanamount = parseFloat(loanAmount-down3);
+var loanamount = myparseFloat(loanAmount-down3);
 var loanmonths = parseFloat(60);
 var monthlyinterest = apr / 12 / 100;
 var monthlypay = (monthlyinterest * loanamount) / (1-(Math.pow((1+monthlyinterest),(-loanmonths))));
