@@ -11,14 +11,26 @@ var squeezePrice;
 
 var total = 0;
 
+
+//###### Price if you select foil options (below then 0.5 square meter)
 const selectFoilOption={'op-maat':25,'andere-vormen':30,'met-logo':40};
-//if everthing above 0.5meter square selecteerFolieAbove + width*height*amount* selectFoilAboveMultiply
+
+//###### price if you select foil options multiply with area (above then 0.5 square meter)
 const selectFoilAboveMultiply={'op-maat':40,'andere-vormen':50,'met-logo':70}
 
-// ########### plaatsing selection price
+
+
+// ########### plaatsen selection price
 const areaSelection={0:false,'ANT-BE':50,'LIM-BE':100,'OOST-BE':100,'VLBR-BE':150,'WVLD-BE':150,'WABR-BE':150,'HENE-BE':170,'LUIK-BE':170,'LUX-BE':170,'NAMEN-BE':170,'GELD-NL':170,'LIM-NL':150,'NOBR-NL':150,'ZEE-NL':170,'ZUHO-NL':170}
-// multiply with square meter + plaasting selection
+
+//########## plaatsen selection price multiply with square meter
 const areaSelectionMultiply={0:false,'ANT-BE':20,'LIM-BE':30,'OOST-BE':30,'VLBR-BE':40,'WVLD-BE':40,'WABR-BE':40,'HENE-BE':40,'LUIK-BE':40,'LUX-BE':40,'NAMEN-BE':40,'GELD-NL':40,'LIM-NL':40,'NOBR-NL':40,'ZEE-NL':40,'ZUHO-NL':40}
+
+//#### delivery price = areaSelection + (areaSelectionMultiply * breedte * hoogte * aantal)
+
+
+//########### this the price multiply with aantal tekeningen(if ja)
+const logoDrawingPrice = 35;
 
 
 
@@ -32,11 +44,6 @@ function checkVal(checkingValue){
         return false;
     }
 }
-
-// function foil(){
-    
-// }
-
 
 function whaChecking(){
     if (checkVal(width) && width.value >= 1150 && checkVal(height) && height.value >= 1150){
@@ -113,7 +120,7 @@ function drawing(){
         // console.log("piece = "+pieces)
         if (logoDrawing.value == "logoja"){
             if (checkVal(pieces)){
-                designPrice = 35 * pieces.value ;
+                designPrice = logoDrawingPrice * pieces.value ;
             }else {
                 designPrice = 0;
             }
@@ -173,7 +180,36 @@ window.addEventListener('keyup',function(e){
         // }
         // totalPriceBox = "€"+ total;
     // }
-    console.log('fp='+foilPrice+", dp = "+deliveryPrice+", dsnP = "+designPrice+", sP = "+squeezePrice+", total = "+total)
+    // console.log('fp='+foilPrice+", dp = "+deliveryPrice+", dsnP = "+designPrice+", sP = "+squeezePrice+", total = "+total)
+    // console.log(totalPriceBox.innerHTML);
+})
+window.addEventListener('change',function(e){
+    // console.log("running")
+    whaChecking();
+    drawing();
+    deliveryCal();
+    squeeze();
+    // var allPrice = [foilPrice,deliveryPrice,designPrice,squeezePrice]
+    // console.log('fp='+foilPrice+", dp = "+deliveryPrice+", dsnP = "+designPrice+", sP = "+squeezePrice)
+    // if (){
+    // console.log("foilp= "+foilPrice+", deliverP"+deliveryPrice+", designP = "+designPrice+",squeeze"+squeezePrice);
+    total = ((foilPrice+deliveryPrice+designPrice+squeezePrice)*1.21).toFixed(2);
+    // console.log(total);
+    totalPriceBox.innerHTML = "€"+total;
+    // console.log('fp='+foilPrice+", dp = "+deliveryPrice+", dsnP = "+designPrice+", sP = "+squeezePrice+", total = "+total)
+    // console.log(total = '+total+if');
+    // }else{
+
+        // for(i=0;i <= allPrice.length;i++){
+        //     if(allPrice[i]==false || allPrice == undefined || allPrice == null){
+        //         allPrice[i] = 0;
+        //     }
+        //     total += allPrice[i];
+        //     console.log(allPrice[i]+', total = '+total+', allprice = '+allPrice+', i = '+i)
+        //     // console.log(total);
+        // }
+        // totalPriceBox = "€"+ total;
+    // }
     // console.log(totalPriceBox.innerHTML);
 })
 window.addEventListener('click',function(e){
@@ -183,13 +219,13 @@ window.addEventListener('click',function(e){
     deliveryCal();
     squeeze();
     // var allPrice = [foilPrice,deliveryPrice,designPrice,squeezePrice]
-    console.log('fp='+foilPrice+", dp = "+deliveryPrice+", dsnP = "+designPrice+", sP = "+squeezePrice)
+    // console.log('fp='+foilPrice+", dp = "+deliveryPrice+", dsnP = "+designPrice+", sP = "+squeezePrice)
     // if (){
     // console.log("foilp= "+foilPrice+", deliverP"+deliveryPrice+", designP = "+designPrice+",squeeze"+squeezePrice);
     total = ((foilPrice+deliveryPrice+designPrice+squeezePrice)*1.21).toFixed(2);
     // console.log(total);
     totalPriceBox.innerHTML = "€"+total;
-    console.log('fp='+foilPrice+", dp = "+deliveryPrice+", dsnP = "+designPrice+", sP = "+squeezePrice+", total = "+total)
+    // console.log('fp='+foilPrice+", dp = "+deliveryPrice+", dsnP = "+designPrice+", sP = "+squeezePrice+", total = "+total)
     // console.log(total = '+total+if');
     // }else{
 
