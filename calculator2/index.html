@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
      <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet"> 
-    <style type="text/css">
-#vatCal{font-size:14px;    font-family: 'Roboto', sans-serif; color:#FFFFFF!important;}
+<style type="text/css">
+#vatCal{font-size:14px;    font-family: 'Roboto', sans-serif; color:#FFFFFF;}
     tr,td{ border:none !important; padding:2px;}
     input{ padding:5px; font-size:12px;font-family: 'Roboto', sans-serif;border:none; border-radius:5px;}
     .bgpnk{ background-color:#9d8b96; color:#FFF;}
@@ -185,63 +185,65 @@ var month603=(monthlypay*100)/100;
 document.mainform.month603.value='$'+formatNumber(month603,2,0);
 }
 
-    </script>
-    </head>
+</script>
+</head>
 
-    <body>
-    <div style="width:100%" align="center" id="vatCal">
-    <div style="width:360px;background-color:#ffffff; border:solid 1px #9d8b96 ; margin-top:20px;">
-    <table cellspacing="0" cellpadding="0" width="100%" dir="ltr" border="0" class="table " style="border:none !important; padding:10px; background-color:#000000; margin-bottom:0px !important">
-    <tbody>
-    <tr>
-    <td colspan="4" style="" align="center"><h3 style="color:#FF3535 !important; margin-bottom:10px; padding-bottom:5px;border-bottom:solid 1px #FFFFFF;">MotoMenus Loan Calculator</h3>
-    </td>
-    </tr>
+<body>
+<div style="width:100%" align="center" id="vatCal">
+<div style="width:360px;background-color:#ffffff; border:solid 1px #9d8b96 ; margin-top:20px;">
+<form name="mainform" method="POST">
+<table cellspacing="0" cellpadding="0" width="100%" dir="ltr" border="0" class="table " style="border:none !important; padding:10px; background-color:#000000; margin-bottom:0px !important">
+<tbody>
+<tr>
+  <td colspan="4" style="" align="center"><h3 style="color:#FF3535 !important; margin-bottom:10px; padding-bottom:5px;border-bottom:solid 1px #FFFFFF;">MotoMenus Loan Calculator</h3>
+ </td>
+</tr>
 
-    <tr>
-    <td style="width:120px;">Loan Amount </td>
-    <td width="60%" colspan="3"><input type="text" name="loanAmount" id="loanAmount" class="form-control" onchange="value='$'+formatNumber(value,2,0);cal()" value=" " required="" style=" width:212px;"></td>
-    </tr>
-    <tr>
-    <td> Rate(APR)</td>
-    <td width="40%" colspan="3"><input type="text" name="apr" id="apr" class="form-control" onchange="value=formatNumber(value,2,0)+'%';cal()" value="2.49%" required="" style=" width:212px;"></td>
-    </tr>
-    <tr>
-    <td>Down Payments</td>
-    <td><input type="text" name="down1" id="down1" class="form-control" onchange="value='$'+formatNumber(value,2,0);cal()" value="$250.00" required="" style=" width:60px;"></td>
-    <td><input type="text" name="down2" id="down2" class="form-control" onchange="value='$'+formatNumber(value,2,0);cal()" value="$500.00" required="" style=" width:60px;"></td>
-    <td><input type="text" name="down3" id="down3" class="form-control" onchange="value='$'+formatNumber(value,2,0);cal()" value="$1000.00" required="" style=" width:60px;"></td>
-    </tr>
-    <tr>
-    <td>36 Months</td>
-    <td><input type="text" name="month361" id="month361" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
-    <td><input type="text" name="month362" id="month362" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
-    <td><input type="text" name="month363" id="month363" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
-    </tr>
-    <tr>
-    <td>48 Months</td>
-    <td><input type="text" name="month481" id="month481" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
-    <td><input type="text" name="month482" id="month482" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
-    <td><input type="text" name="month483" id="month483" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
-    </tr>
-    <tr>
-    <td>60 Months</td>
-    <td><input type="text" name="month601" id="month601" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
-    <td><input type="text" name="month602" id="month602" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
-    <td><input type="text" name="month603" id="month603" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
-    </tr>
-
-
-    </tbody>
-    </table>
+<tr>
+  <td style="width:120px;">Loan Amount </td>
+  <td width="60%" colspan="3"><input type="text" name="loanAmount" id="loanAmount" class="form-control" onchange="value='$'+formatNumber(value,2,0);cal()" value=" " required="" style=" width:212px;"></td>
+</tr>
+<tr>
+  <td> Rate(APR)</td>
+  <td width="40%" colspan="3"><input type="text" name="apr" id="apr" class="form-control" onchange="value=formatNumber(value,2,0)+'%';cal()" value="2.49%" required="" style=" width:212px;"></td>
+</tr>
+<tr>
+  <td>Down Payments</td>
+  <td><input type="text" name="down1" id="down1" class="form-control" onchange="value='$'+formatNumber(value,2,0);cal()" value="$250.00" required="" style=" width:60px;"></td>
+  <td><input type="text" name="down2" id="down2" class="form-control" onchange="value='$'+formatNumber(value,2,0);cal()" value="$500.00" required="" style=" width:60px;"></td>
+  <td><input type="text" name="down3" id="down3" class="form-control" onchange="value='$'+formatNumber(value,2,0);cal()" value="$1000.00" required="" style=" width:60px;"></td>
+</tr>
+<tr>
+  <td>36 Months</td>
+  <td><input type="text" name="month361" id="month361" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
+  <td><input type="text" name="month362" id="month362" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
+  <td><input type="text" name="month363" id="month363" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
+</tr>
+<tr>
+  <td>48 Months</td>
+  <td><input type="text" name="month481" id="month481" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
+  <td><input type="text" name="month482" id="month482" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
+  <td><input type="text" name="month483" id="month483" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
+</tr>
+<tr>
+  <td>60 Months</td>
+  <td><input type="text" name="month601" id="month601" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
+  <td><input type="text" name="month602" id="month602" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
+  <td><input type="text" name="month603" id="month603" class="form-control readonly" onchange="value='$'+formatNumber(value,2,0);cal()" value="$00.00" required="" style=" width:60px;" readonly=""></td>
+</tr>
 
 
-    </div>
-    </div>
+</tbody>
+</table>
 
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> -->
-    </body>
-</html>
+
+</form>
+</div>
+</div>
+
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> -->
+</body></html>
