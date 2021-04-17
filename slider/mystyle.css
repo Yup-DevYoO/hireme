@@ -75,7 +75,7 @@ ol.carousel-indicators li.active{ width: 10px; height: 10px; margin: 0 4px; opac
 @media(max-width:510px){
     .carousel-img-row h2 {font-size: 35px;margin-bottom:18px;line-height:45px;}
     
-    .carousel-img-row div.carousel-img-col{height: 35vh;padding-top:30px;}
+    .carousel-img-row div.carousel-img-col{height: 40vh;padding-top:30px;}
     /* .carousel-img-row div.carousel-img-col{min-height: 35vh; max-height:50vh; padding-top:30px;}  */
     .carousel-img-row div.carousel-text-col{height: 65vh;}
 
