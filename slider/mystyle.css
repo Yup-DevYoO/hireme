@@ -1,5 +1,6 @@
 .car-img-inner{background: url("achtergrond.jpg");}
-.carousel-img-row div.carousel-img-col, .carousel-img-row div.carousel-text-col{padding-left: 100px;padding-right: 20px;}
+.carousel-img-row div.carousel-text-col{padding-left: 80px;padding-right: 20px;}
+.carousel-img-row div.carousel-img-col{padding-left: 100px;padding-right: 40px;}
 .carousel-img-row div.carousel-img-col{padding-top:30px;height:100%;}
 .carousel-img-row{height: 500px;}
 .carousel-img-row img.carousel-img{
@@ -58,8 +59,28 @@ ol.carousel-indicators li.active{ width: 10px; height: 10px; margin: 0 4px; opac
 .carousel-img-row{height: 500px;}
 }
 
-@media(max-width:786px){
+@media(max-width:760px){
+    .carousel-img-row h2 {font-size: 35px;margin-bottom:18px;line-height:45px;}
+    
+    .carousel-img-row div.carousel-img-col{height: 35vh;padding-top:30px;}
+    /* .carousel-img-row div.carousel-img-col{min-height: 35vh; max-height:50vh; padding-top:30px;}  */
+    .carousel-img-row div.carousel-text-col{height: 45vh;}
+
+    .carousel-img-row p {font-size: 20px; width: 100%;}
     .carousel-img-row div.carousel-img-col, .carousel-img-row div.carousel-text-col{padding-left: 15px;padding-right: 15px;padding-top:20px;}
-    .carousel-img-row{height: 120vh;}
-    .carousel-img-row div.carousel-img-col{padding-top:30px;height:auto;}
+    .carousel-img-row{height: 80vh;}
+    /* .carousel-img-row div.carousel-img-col{} */
+}
+
+@media(max-width:510px){
+    .carousel-img-row h2 {font-size: 35px;margin-bottom:18px;line-height:45px;}
+    
+    .carousel-img-row div.carousel-img-col{height: 35vh;padding-top:30px;}
+    /* .carousel-img-row div.carousel-img-col{min-height: 35vh; max-height:50vh; padding-top:30px;}  */
+    .carousel-img-row div.carousel-text-col{height: 65vh;}
+
+    .carousel-img-row p {font-size: 20px; width: 100%;}
+    .carousel-img-row div.carousel-img-col, .carousel-img-row div.carousel-text-col{padding-left: 15px;padding-right: 15px;padding-top:20px;}
+    .carousel-img-row{height: 100vh;}
+    /* .carousel-img-row div.carousel-img-col{} */
 }
