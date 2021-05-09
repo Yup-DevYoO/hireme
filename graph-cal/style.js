@@ -54,13 +54,13 @@
         }
     
         var principal_dataset = {
-            label: 'inleg(totaal)',
+            label: 'inleg (totaal)',
             backgroundColor: '#424fff',
             data: []
         };
     
         var interest_dataset = {
-            label: "rendement(totaal)",
+            label: "rendement (totaal)",
             backgroundColor: '#a7adf7',
             data: []
         };
