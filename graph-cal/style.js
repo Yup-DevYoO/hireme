@@ -54,13 +54,13 @@
         }
     
         var principal_dataset = {
-            label: 'Totale inleg',
+            label: 'inleg(totaal)',
             backgroundColor: '#424fff',
             data: []
         };
     
         var interest_dataset = {
-            label: "Totaal rendement",
+            label: "rendement(totaal)",
             backgroundColor: '#a7adf7',
             data: []
         };
@@ -152,9 +152,6 @@
             type: 'bar',
             data: getChartData(),
             options: {
-                legend: {
-                    display: false
-                },
                 tooltips: {
                     mode: 'index',
                     intersect: false,
@@ -166,6 +163,21 @@
                 },
                 //responsive: true,
                 maintainAspectRatio: false,
+                legend: {
+                    display: true,
+                    position: 'bottom',
+                    textAlign: 'right',
+                    fontSize: 5,
+                    align:'end',
+                    labels: {
+                        usePointStyle: true,
+                        fontColor: '#000',
+                        fontSize: 15,
+                        boxWidth: 12,
+                        padding: 15,
+                        textAlign: 'right'
+                    }
+                },
                 scales: {
                     xAxes: [{
                         stacked: true,
