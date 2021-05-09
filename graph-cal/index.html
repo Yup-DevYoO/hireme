@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="elementor-widget-container">
+<div class="container-fluid m-0 p-0">
+<div class="row m-0">
+    <div class="col-md-6 first">
+    <div class="firstdiv">
+        <div class="form-group">
+            <label for="initial_deposit">Initieel bedrag (€)</label>
+            <div class="row">
+                <div class="input-group col-md-6 col-sm-8">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-primary" type="button" data-counter="sub" data-field="initial_deposit">−</button>
+                    </div>
+                    <input class="form-control text-center" id="initial_deposit" type="text" name="initial_deposit" min="100" max="1000000" step="100" value="5000" data-value="5000">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" data-counter="add" data-field="initial_deposit">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+
+        <div class="form-group">
+            <label for="contribution_amount">Bijdrage (€)</label>
+            <div class="row">
+                <div class="input-group col-md-6 col-sm-8">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-primary" type="button" data-counter="sub" data-field="contribution_amount">−</button>
+                    </div>
+                    <input class="form-control text-center" id="contribution_amount" type="text" name="contribution_amount" min="0" max="10000" step="50" value="100" data-value="100">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" data-counter="add" data-field="contribution_amount">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" id="contribution_period_monthly" type="radio" name="contribution_period" value="12" checked="">
+                <label class="form-check-label" for="contribution_period_monthly">Maandelijks</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" id="contribution_period_annually" type="radio" name="contribution_period" value="1">
+                <label class="form-check-label" for="contribution_period_annually">Jaarlijks</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="investment_timespan">Looptijd</label>
+            <div class="row">
+                <div class="investment_timespan col-md-6 col-sm-8">
+                    <input class="form-control" id="investment_timespan" type="range" name="investment_timespan" min="1" max="50" step="1" value="5">
+                </div>
+            </div>
+            <span id="investment_timespan_text">5 jaar</span>
+        </div>
+
+        <div class="form-group">
+            <label for="estimated_return">Verwacht rendement (per jaar)</label>
+            <div class="row">
+                <div class="input-group col-md-6 col-sm-8">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-primary" type="button" data-counter="sub" data-field="estimated_return">−</button>
+                    </div>
+                    <input class="form-control text-center" id="estimated_return" type="text" name="estimated_return" min="0" max="100" step="0.25" value="5.00%" data-value="5.00" data-append="%">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" data-counter="add" data-field="estimated_return">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inflation">Inflatie (per jaar)</label>
+            <div class="row">
+                <div class="input-group col-md-6 col-sm-8">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-primary" type="button" data-counter="sub" data-field="inflation">−</button>
+                    </div>
+                    <input class="form-control text-center" id="inflation" type="text" name="inflation" min="0" max="50" step="0.25" value="1.5%" data-value="1.5" data-append="%">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" data-counter="add" data-field="inflation">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="tax">Belasting (per jaar)</label>
+            <div class="row">
+                <div class="input-group col-md-6 col-sm-8">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-primary" type="button" data-counter="sub" data-field="tax">−</button>
+                    </div>
+                    <input class="form-control text-center" id="tax" type="text" name="tax" min="0" max="50" step="0.25" value="0.5%" data-value="0.5" data-append="%">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" data-counter="add" data-field="tax">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <div>Compound Frequentie</div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="compound_period_daily" type="radio" name="compound_period" value="365">
+                    <label class="form-check-label" for="compound_period_daily">Dagelijks</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="compound_period_monthly" type="radio" name="compound_period" value="12">
+                    <label class="form-check-label" for="compound_period_monthly">Maandelijks</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="compound_period_annually" type="radio" name="compound_period" value="1" checked="">
+                    <label class="form-check-label" for="compound_period_annually">Jaarlijks</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-md-6 first text-center"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+        <div id="chart-name">Toekomstig vermogen</div>
+        <div class="h3" id="future_balance">€69.227</div>
+        <!--<canvas id="myChart" style="display: block; width: 495px; height: 247px;" width="495" height="247" class="chartjs-render-monitor"></canvas>-->
+        <canvas id="myChart"  class="chartjs-render-monitor"></canvas>
+    </div>
+</div>
+</div>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous">
+
+</script>
+<script>
+(function () {
+var initial_deposit = document.querySelector('#initial_deposit'),
+    contribution_amount = document.querySelector('#contribution_amount'),
+    investment_timespan = document.querySelector('#investment_timespan'),
+    investment_timespan_text = document.querySelector('#investment_timespan_text'),
+    estimated_return = document.querySelector('#estimated_return'),
+    inflation = document.querySelector('#inflation'),
+    tax = document.querySelector('#tax'),
+    future_balance = document.querySelector('#future_balance');
+
+function updateValue(element, action) {
+    var min = parseFloat(element.getAttribute('min')),
+        max = parseFloat(element.getAttribute('max')),
+        step = parseFloat(element.getAttribute('step')) || 1,
+        oldValue = element.dataset.value || element.defaultValue || 0,
+        newValue = parseFloat(element.value.replace(/\$/, ''));
+
+    if (isNaN(parseFloat(newValue))) {
+        newValue = oldValue;
+    } else {
+        if (action == 'add') {
+            newValue += step;
+        } else if (action == 'sub') {
+            newValue -= step;
+        }
+
+        newValue = newValue < min ? min : newValue > max ? max : newValue;
+    }
+
+    element.dataset.value = newValue;
+    element.value = (element.dataset.prepend || '') + newValue + (element.dataset.append || '');
+
+    updateChart();
+}
+
+function getChartData() {
+    var P = parseFloat(initial_deposit.dataset.value), // Principal
+        r = (parseFloat(estimated_return.dataset.value / 100) - parseFloat(inflation.dataset.value / 100) - parseFloat(tax.dataset.value / 100)), // Annual Interest Rate
+        // ifl = parseFloat(inflation.dataset.value / 100), // Annual Inflation Rate
+        c = parseFloat(contribution_amount.dataset.value), // Contribution Amount
+        n = parseInt(document.querySelector('[name="compound_period"]:checked').value), // Compound Period
+        n2 = parseInt(document.querySelector('[name="contribution_period"]:checked').value), // Contribution Period
+        t = parseInt(investment_timespan.value), // Investment Time Span
+        currentYear = (new Date()).getFullYear()
+    ;
+
+
+
+    var labels = [];
+    for (var year = currentYear; year < currentYear + t; year++) {
+        labels.push(year);
+    }
+
+    var principal_dataset = {
+        label: 'Totale inleg',
+        backgroundColor: '#34BD89',
+        data: []
+    };
+
+    var interest_dataset = {
+        label: "Totaal rendement",
+        backgroundColor: '#89dfbe',
+        data: []
+    };
+
+    for (var i = 1; i <= t; i++) {
+        var principal = P + ( c * n2 * i ),
+            interest = 0,
+            balance = principal;
+
+        if (r) {
+            var x = Math.pow(1 + r / n, n * i),
+                compound_interest = P * x,
+                contribution_interest = c * (x - 1) / (r / n2);
+
+            interest = (compound_interest + contribution_interest - principal).toFixed(0)
+            balance = (function(){
+                return (compound_interest + contribution_interest).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }());
+        }
+        future_balance.innerHTML = '€' + balance;
+        principal_dataset.data.push(principal);
+        interest_dataset.data.push(interest);
+    }
+
+    return {
+        labels: labels,
+        datasets: [principal_dataset, interest_dataset]
+    }
+}
+
+function updateChart() {
+    var data = getChartData();
+    chart.data.labels = data.labels;
+    chart.data.datasets[0].data = data.datasets[0].data;
+    chart.data.datasets[1].data = data.datasets[1].data;
+    chart.update();
+}
+
+initial_deposit.addEventListener('change', function () {
+    updateValue(this);
+});
+
+contribution_amount.addEventListener('change', function () {
+    updateValue(this);
+});
+
+estimated_return.addEventListener('change', function () {
+    updateValue(this);
+});
+
+inflation.addEventListener('change', function () {
+    updateValue(this);
+});
+
+tax.addEventListener('change', function () {
+    updateValue(this);
+});
+
+investment_timespan.addEventListener('change', function () {
+    investment_timespan_text.innerHTML = this.value + ' jaar';
+    updateChart();
+});
+
+investment_timespan.addEventListener('input', function () {
+    investment_timespan_text.innerHTML = this.value + ' jaar';
+});
+
+var radios = document.querySelectorAll('[name="contribution_period"], [name="compound_period"]');
+for (var j = 0; j < radios.length; j++) {
+    radios[j].addEventListener('change', updateChart);
+}
+
+var buttons = document.querySelectorAll('[data-counter]');
+for (var i = 0; i < buttons.length; i++) {
+    var button = buttons[i];
+
+    button.addEventListener('click', function () {
+        var field = document.querySelector('[name="' + this.dataset.field + '"]'),
+            action = this.dataset.counter;
+
+        if (field) {
+            updateValue(field, action);
+        }
+    });
+}
+
+var ctx = document.getElementById('myChart').getContext('2d'),
+    chart = new Chart(ctx, {
+        type: 'bar',
+        data: getChartData(),
+        options: {
+            legend: {
+                display: false
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+                callbacks: {
+                    label: function (tooltipItem, data) {
+                        return data.datasets[tooltipItem.datasetIndex].label + ': €' + tooltipItem.yLabel;
+                    }
+                }
+            },
+            responsive: true,
+            scales: {
+                xAxes: [{
+                    stacked: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Jaar'
+                    }
+                }],
+                yAxes: [{
+                    stacked: true,
+                    ticks: {
+                        callback: function (value) {
+                            return '€' + value;
+                        }
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Vermogen'
+                    }
+                }]
+            }
+        }
+    });
+
+})();
+
+</script>
+</div>
+</body>
+</html>
