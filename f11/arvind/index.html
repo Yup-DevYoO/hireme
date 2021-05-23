@@ -23,28 +23,34 @@
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/scss/style.css">
 </head>
-<style>p{margin-bottom: 0.5rem;}.form-file::-webkit-file-upload-button {visibility: hidden;display: none;}.form-file::before{
-  /*content: url(test.svg)' upload csv file ';text-align: center;  */
+<style>p{margin-bottom: 0.5rem;}.form-file::-webkit-file-upload-button {visibility: hidden;display: none;}
+/*.form-file::before{
+  content: url(test.svg)' upload csv file ';text-align: center; 
   content: 'Select csv files';
   visibility: visible;
-  display: inline-block;
+  display: block;
+  width:80%;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto!important;
   background: rgba(255, 0, 0, 0.904);
   border-radius: 3px;
   padding: 5px 8px;
   margin-right:8px;
+  font-size: 1.4rem!important;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
   cursor: pointer;
-  color:white; font-size: 15px;}.form-file:after{display: none;}.row, .form-group, .shadow, .shadow-sm {background-color: white;}
+  color:white; font-size: 15px;}.form-file:after{display: none;}*/.row, .form-group, .shadow, .shadow-sm {background-color: white;}.bg-danger{background-color: rgba(255, 0, 0, 0.904)!important;}
   </style>
 <body class="bg-light">
 <div class="p-2">
     <form class="form-inline">
 
-      <div class="form-group p-2 my-3 shadow">
-
-        <input type="file" id="csvfile" onchange="(function(){$('#typetour').remove(); $('#typematch').remove();$('#type').val(1);onChange(event)})()" class="form-file p-2 text-center" accept=".csv" required />      </div>
+      <div class="form-group px-2 py-4 my-3 shadow">
+        <label for="csvfile" class="w-100 text-center px-3 py-2 text-light" style="font-size:1.3rem;"><div class="bg-danger text-center py-2"><span style="padding-right:10px;"><i class="bi bi-upload"></i></span>upload csv file</div></label>
+        <input style="display: none;" type="file" id="csvfile" onchange="(function(){$('#typetour').remove(); $('#typematch').remove();$('#type').val(1);onChange(event)})()" class="form-file p-2 text-center" accept=".csv" required />      </div>
       <div class="p-2 mt-3 mb-2 shadow" id="selectarea">
       <select onchange="(function(){$('#typetour').remove(); $('#typematch').remove();$('#type').val(1);onChange(event)})()" class="form-select my-2" aria-label="Default select example" id="time">
         <option value="0" selected>Lifetime</option>
