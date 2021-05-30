@@ -794,12 +794,12 @@ function conversion(selectFrom, selectTo){
 }
 
 function reverseFun(){
-    var selectfrom = document.getElementById('selectfrom').value;
-    var selectto = document.getElementById('selectto').value;
-    conversion(selectfrom,selectto);
+    selectfrom = document.getElementById('selectfrom').value;
+    selectto = document.getElementById('selectto').value;
     document.getElementById('selectfrom').value = selectto;
     document.getElementById('selectto').value = selectfrom;
-
+    conversion(selectto,selectfrom);
+    
 }
 </script>
 </body>
