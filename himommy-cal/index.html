@@ -783,7 +783,7 @@ function conversion(selectFrom, selectTo){
             okfrom[i].innerHTML = selectFrom;
         }
 
-        document.getElementById("exchange").innerHTML = t[fromto].toFixed(2), document.getElementById("totalrate").innerHTML = (t[fromto] * (parseInt(document.getElementById("markup").innerHTML) + 100) / 100).toFixed(2),
+        document.getElementById("exchange").innerHTML = t[fromto].toFixed(2), document.getElementById("totalrate").innerHTML = (t[fromto] * (100 - parseInt(document.getElementById("markup").innerHTML)) / 100).toFixed(2),
         
         myexchangeRate=(t[fromto] * (100 - parseInt(document.getElementById("markup").innerHTML)) / 100),
 
