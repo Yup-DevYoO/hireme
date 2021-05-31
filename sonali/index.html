@@ -16,14 +16,20 @@
   word-spacing: 8px;
   letter-spacing: 5px;
   text-transform: uppercase;
-  margin-bottom: 20px;
-}p{font-weight: 100;word-spacing: 2px;letter-spacing: 1px;}
+  margin-bottom: 20px;}
+  h2{ font-weight: 100;
+  font-size: 2.2rem;
+  word-spacing: 8px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;}
+p{font-weight: 100;word-spacing: 2px;letter-spacing: 1px;}
 .px-10{padding-right:7%;padding-left:7%;}
 #homediv{color:white;background: url('image/image-1.png') no-repeat center;width:100%;background-size: cover;padding-top:120px;height: 100vh;position:relative;}
 @media(max-width:920px){
   .px-10{padding-right: 30px;padding-left: 30px;}#homediv{height: auto;min-height:100vh;}
 }
-@media(max-width:720px){.px-10{padding-right: 10px;padding-left: 10px;}h1{font-size: 2.8rem;}}
+@media(max-width:720px){.px-10{padding-right: 10px;padding-left: 10px;}h1{font-size: 2.8rem;}h2{font-size:2rem;}}
 body {
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
@@ -92,7 +98,7 @@ body {
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg py-2 px-10" id="navbar">
         <div class="container-fluid px-0">
-          <a class="navbar-brand" href="#">Logo</a>
+          <a class="navbar-brand" href="#"><img src="image/logo.png" alt="" srcset=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -115,12 +121,12 @@ body {
         </div>
      </nav>
 
-     <div class="row m-0 px-10 align-items-end" id="homediv">
+     <div class="row m-0 px-10 align-items-center" id="homediv">
         <div style="position: absolute;top:0;bottom: 0;right: 0;left: 0;background-image: linear-gradient(to bottom right, #b1985700, #bda25de6);"></div>
         <div class="col-12 col-sm-10 col-md-8 p-0" style="z-index: 2;">
           <div class="">
           <h1 class="fadeInLeft animated">Kuthu Vilakku</h1>
-          <h1 class="pb-4 fadeInLeft animated-1">Brass Lamps</h1>
+          <h2 class="pb-4 fadeInLeft animated-1">Brass Lamps</h2>
           <p class="fadeInLeft animated-2">
             Lamps were made and used in India from time immemorial. The oldest earthern lamps were found in the Indus Valley excavations. In other sites dating from 2nd century A.D. onwards, lamps have been found, too, all over India.<br><br>
 
