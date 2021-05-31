@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brass Lamps</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/navbar.css">
+</head>
+<style>body{font-family: 'Roboto', sans-serif;}h1{ font-weight: 100;
+  font-size: 3.2rem;
+  word-spacing: 8px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}p{font-weight: 100;word-spacing: 2px;letter-spacing: 1px;}
+.px-10{padding-right:7%;padding-left:7%;}
+#homediv{color:white;background: url('image/image-1.png') no-repeat center;width:100%;background-size: cover;padding-top:120px;height: 100vh;position:relative;}
+@media(max-width:920px){
+  .px-10{padding-right: 30px;padding-left: 30px;}#homediv{height: auto;min-height:100vh;}
+}
+@media(max-width:720px){.px-10{padding-right: 10px;padding-left: 10px;}h1{font-size: 2.8rem;}}
+body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+.animated {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    -webkit-animation-duration: 1.1s;
+    animation-duration: 1.1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.animated-1 {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-duration: 1.4s;
+    animation-duration: 1.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.animated-2 {
+    -webkit-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@-webkit-keyframes fadeInLeft {
+  0% {
+      opacity: 0;
+      -webkit-transform: translateX(-30px);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+</style>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg py-2 px-10" id="navbar">
+        <div class="container-fluid px-0">
+          <a class="navbar-brand" href="#">Logo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0" style="margin-left:auto;">
+              <li class="nav-item">
+                <a class="nav-link" href="#">History</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Artisans</a>
+              </li><li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li><li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li><li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+     </nav>
+
+     <div class="row m-0 px-10 align-items-end" id="homediv">
+        <div style="position: absolute;top:0;bottom: 0;right: 0;left: 0;background-image: linear-gradient(to bottom right,#b1985700, #e1c16fe0);"></div>
+        <div class="col-12 col-sm-10 col-md-8 p-0" style="z-index: 2;">
+          <div class="">
+          <h1 class="fadeInLeft animated">Kuthu Vilakku</h1>
+          <h1 class="pb-4 fadeInLeft animated-1">Brass Lamps</h1>
+          <p class="fadeInLeft animated-2">
+            Lamps were made and used in India from time immemorial. The oldest earthern lamps were found in the Indus Valley excavations. In other sites dating from 2nd century A.D. onwards, lamps have been found, too, all over India.<br><br>
+
+Tamilnadu is well known for artistic brass lamps. Nachiarkoil, a small hamlet in Tanjore District is the Craft pocket for making traditional brass lamps.<br><br>
+Brass lamps more traditionally known as "Kuthu Vilakku" which reflect the cultural heritage of the State have been promoted by Poompuhar in the modern world. These lamps are used for pooja purposes as also for decorative purposes, made of using virgin metals such as copper and zinc in required proportions along with high quality of brass. <br>
+          </p></div>
+
+        </div>
+     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="static/js/navbar.js"></script>
+</body>
+</html>
