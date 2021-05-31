@@ -1,1 +1,0 @@
-sticky navbar like potri.in
