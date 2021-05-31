@@ -26,7 +26,7 @@ div.navbar-collapse ul.navbar-nav{font-weight: 100;word-spacing: 2px;letter-spac
     ul.navbar-nav li{padding-left: 0rem}
     .nav-icon button{padding:0 0 0 0.3rem;}
     div.navbar-collapse ul.navbar-nav{padding-left: 1rem;padding-right: 1rem;}
-    .navbar-collapse {position: absolute; z-index: 1000;background-image: linear-gradient(to top right, black, #710d0d47); width: 100%; top: 4.5rem;left:0; }.navbar a{color:black;}
+    .navbar-collapse {position: absolute; z-index: 1000;background-image: linear-gradient(to top right, black, #710d0d47); width: 100%; top: 5.5rem;left:0; }.navbar a{color:black;}
 
 }
 @media (max-width:500px){
