@@ -1,5 +1,5 @@
 .navbar{position:fixed;width: 100%;z-index: 100;transition: top 0.8s;}
-.navbar-brand img{height:4rem;}
+.navbar-brand img{height:7rem;}
 .navbar-toggler{border: none!important;font-size: 1rem;}
 .navbar-toggler:focus {box-shadow: none;color:black;}
 .navbar-light .navbar-nav .nav-link {color: black; font-weight: bold;}
@@ -22,6 +22,7 @@ div.navbar-collapse ul.navbar-nav{font-weight: 100;word-spacing: 2px;letter-spac
 .nav-item.dropdown .dropdown-menu{background-color: #00ACC1;}
 
 @media (max-width:990px){
+    .navbar-brand img{height:6rem;}
     .navbar-brand{padding-left: 2rem;}
     ul.navbar-nav li{padding-left: 0rem}
     .nav-icon button{padding:0 0 0 0.3rem;}
