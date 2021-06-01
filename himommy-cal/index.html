@@ -33,7 +33,7 @@ select.form-select-sm, input.form-control{font-size: 1rem;background-color: whit
     <div class="row m-0 align-items-end shadow-sm">
 
         <div class="col-12 col-sm-5">
-            <p>CURRENCY HAVE</p>
+            <p>CURRENCY WANT</p>
             <select class="form-select form-select-sm p-2" aria-label=".form-select-sm" id="selectfrom" onchange="startCoversion();">        
                     <option value="AED">AED</option>
                     
@@ -374,7 +374,7 @@ select.form-select-sm, input.form-control{font-size: 1rem;background-color: whit
             </div>
         </div>
         <div class="col-12 col-sm-5">
-            <p>CURRENCY WANT</p>
+            <p>CURRENCY HAVE</p>
             <select class="form-select form-select-sm p-2" aria-label=".form-select-sm" id="selectto" onchange="startCoversion();">        
                     <option value="AED">AED</option>
                     
@@ -739,7 +739,7 @@ select.form-select-sm, input.form-control{font-size: 1rem;background-color: whit
                 </div>
                 <div class="col-12 col-sm-4 col-md-4">
                     <div>
-                        <p>ARGETS EXCHANGE RATE WITH MARK-UP (IN <span class="fromp">EURO</span>)</p>
+                        <p>ARGENTS EXCHANGE RATE WITH MARK-UP (IN <span class="fromp">EURO</span>)</p>
                         <h2 id="totalrate"></h2>
                     </div>
                 </div>
@@ -783,9 +783,9 @@ function conversion(selectFrom, selectTo){
             okfrom[i].innerHTML = selectFrom;
         }
 
-        document.getElementById("exchange").innerHTML = t[fromto].toFixed(2), document.getElementById("totalrate").innerHTML = (t[fromto] * (100 - parseInt(document.getElementById("markup").innerHTML)) / 100).toFixed(2),
+        document.getElementById("exchange").innerHTML = t[fromto].toFixed(2), document.getElementById("totalrate").innerHTML = (t[fromto] * (100 + parseInt(document.getElementById("markup").innerHTML)) / 100).toFixed(2),
         
-        myexchangeRate=(t[fromto] * (100 - parseInt(document.getElementById("markup").innerHTML)) / 100),
+        myexchangeRate=(t[fromto] * (100 + parseInt(document.getElementById("markup").innerHTML)) / 100),
 
         inputVal=document.getElementById("quote").value,
         inputVal<0&&(document.getElementById("quote").value=500,inputVal=500),
