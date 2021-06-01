@@ -34,7 +34,7 @@ select.form-select-sm, input.form-control{font-size: 1rem;background-color: whit
 
         <div class="col-12 col-sm-5">
             <p>CURRENCY WANT</p>
-            <select class="form-select form-select-sm p-2" aria-label=".form-select-sm" id="selectto" onchange="startCoversion();">        
+            <select class="form-select form-select-sm p-2" aria-label=".form-select-sm" id="selectfrom" onchange="startCoversion();">        
                     <option value="AED">AED</option>
                     
                     <option value="AFN">AFN</option>
@@ -375,7 +375,7 @@ select.form-select-sm, input.form-control{font-size: 1rem;background-color: whit
         </div>
         <div class="col-12 col-sm-5">
             <p>CURRENCY HAVE</p>
-            <select class="form-select form-select-sm p-2" aria-label=".form-select-sm" id="selectfrom" onchange="startCoversion();">        
+            <select class="form-select form-select-sm p-2" aria-label=".form-select-sm" id="selectto" onchange="startCoversion();">        
                     <option value="AED">AED</option>
                     
                     <option value="AFN">AFN</option>
@@ -468,7 +468,7 @@ select.form-select-sm, input.form-control{font-size: 1rem;background-color: whit
                     
                     <option value="ETB">ETB</option>
                     
-                    <option value="EUR" selected>EUR</option>
+                    <option value="EUR">EUR</option>
                     
                     <option value="FJD">FJD</option>
                     
@@ -508,7 +508,7 @@ select.form-select-sm, input.form-control{font-size: 1rem;background-color: whit
                     
                     <option value="IMP">IMP</option>
                     
-                    <option value="INR">INR</option>
+                    <option value="INR" selected>INR</option>
                     
                     <option value="IQD">IQD</option>
                     
@@ -754,7 +754,7 @@ var selectTo;
 function myFunction(){
     inputVal=document.getElementById("quote").value,
     inputVal<0&&(document.getElementById("quote").value=500,inputVal=500),
-    document.getElementById("total").innerHTML=parseInt(inputVal*myexchangeRate);
+    document.getElementById("total").innerHTML=parseFloat(inputVal*myexchangeRate).toFixed(2);
 }
 function startCoversion(){
     var selectfrom = document.getElementById('selectfrom').value;
@@ -789,7 +789,7 @@ function conversion(selectFrom, selectTo){
 
         inputVal=document.getElementById("quote").value,
         inputVal<0&&(document.getElementById("quote").value=500,inputVal=500),
-        document.getElementById("total").innerHTML=parseInt(inputVal*myexchangeRate);
+        document.getElementById("total").innerHTML=parseFloat(inputVal*myexchangeRate).toFixed(2);
     })
 }
 
