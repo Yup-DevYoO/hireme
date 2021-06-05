@@ -1,0 +1,9 @@
+/*navbar*/
+.mynavbar{position:fixed;width: 100%;z-index: 100;transition: top 0.8s;}.brandimg{width:30%;display: inline-block;}.navlinkdiv{width:70%;display: inline-block;}
+.navbar-brand img{height:7rem;}
+
+@media(max-width:992px){
+  .navbar-brand img{height:4rem;}
+  .navrow{background-color:#695930e6;}
+}
+
