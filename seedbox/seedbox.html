@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <!-- Stylesheets
+	============================================= -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i"
+        rel="stylesheet" type="text/css" />
+<!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Document Title
+	============================================= -->
+    <title>Modal &amp; Popovers | Canvas</title>
+
+</head>
+
+<body class="stretched">
+
+    <!-- Document Wrapper
+	============================================= -->
+    <div id="wrapper" class="clearfix">
+
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+        <input type="hidden" id="rownum" value="1">
+        <div class="row p-3">
+            <div class="col-12 col-md-8">
+                
+                 <!--country-->
+                <div class="row py-4">
+                    <div class="col-12">
+                        <h3>Country</h3>
+                        <hr>
+                     </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <label for="country" class="form-label">Country</label>
+                        <select class="form-select" aria-label="Default select country" id="country">
+                            <option selected>Select Country</option>
+                            <option value="1">malaysia</option>
+                            <option value="2">brunei</option>
+                            <option value="3">singapore</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--dimentions-->
+                 <div class="row py-4">
+                     <div class="col-12">
+                        <h3>Dimentions And Item Type</h3>
+                        <hr>
+                     </div>
+                     <div class="col-12">
+                        <button class="btn btn-primary mt-4 mb-3 px-5" onclick="addMoreRow()">Add More</button>
+                     </div>
+
+                    <div class="col-12 p-0" id="myseedbox">
+                        <h3 style="padding-top: 10px;">*</h3>
+                        <div class="row p-0">
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="">
+                                    <label class="form-label">Length</label>
+                                    <input type="number" class="form-control length" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="">
+                                    <label class="form-label">width</label>
+                                    <input type="number" class="form-control width" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="">
+                                    <label class="form-label">height</label>
+                                    <input type="number" class="form-control height" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="">
+                                    <label class="form-label">weight</label>
+                                    <input type="number" class="form-control weight" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="col-12 p-0">
+                                <div class="row p-0">
+                                    <div class="col-6 courier pt-4">
+                                        <div class="">
+                                            <input type="radio" class="btn-check" name="itemtype" id="itemtype-normal" autocomplete="off" checked>
+                                            <label class="btn btn-outline-success" for="itemtype-normal">Normal</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 courier pt-4">
+                                        <div class="">
+                                            <input type="radio" class="btn-check" name="itemtype" id="itemtype-sensitive" autocomplete="off">
+                                            <label class="btn btn-outline-success" for="itemtype-sensitive">Sensitive</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+ 
+                </div>
+
+                <!--dimentions-->
+                <div class="row py-4">
+                    <div class="col-12">
+                       <h3>Courier Service</h3>
+                       <hr>
+                    </div>
+                   <div class="col-6 courier pt-4">
+                       <div class="mb-3">
+                            <input type="radio" class="btn-check" name="courier" id="air" autocomplete="off" checked>
+                            <label class="btn btn-outline-success" for="air">By Air</label>
+                       </div>
+                   </div>
+
+                    <div class="col-6 courier pt-4">
+                        <div class="mb-3">
+                            <input type="radio" class="btn-check" name="courier" id="sea" autocomplete="off">
+                            <label class="btn btn-outline-success" for="sea">By Sea</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--results-->
+            <div class="col-12 col-md-4 py-5 px-2">
+                <div class="row bg-success text-light p-3">
+                    <!--<div class="col-12">-->
+                        <div class="col-12">
+                            <h3>Price calculation</h3>
+                            <hr>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label for="itemprice" class="form-label">Item Price</label>
+                                <input type="number" class="form-control" id="itemprice" placeholder="" disabled>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label for="domesticprice" class="form-label">Domestic Courier Price</label>
+                                <input type="number" class="form-control" id="domesticprice" placeholder="" disabled>
+                                </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label for="insurance" class="form-label">Insurance</label>
+                                <input type="number" class="form-control" id="insurance" placeholder="" disabled>
+                                </div>
+                        </div>
+    
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label for="insurance" class="form-label">Item Total Price</label>
+                                <input type="number" class="form-control" id="insurance" placeholder="" disabled>
+                            </div>
+                        </div>
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+
+    </section><!-- #content end -->
+
+
+
+    <!-- External JavaScripts
+	============================================= -->
+    <script src="js/jquery.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!--<script src="js/calculation.js"></script>-->
+    <script>
+        function addMoreRow(){
+            rownumber = parseInt($('#rownum').val())+1;
+            $('#rownum').val(rownumber);
+            newRow = `<hr><h3 style="padding-top: 15px;">*</h3>
+                    <div class="row p-0"><div class="col-12 col-sm-6 col-md-4"><div class="mb-1"><label class="form-label">Length</label><input type="number" class="form-control length" placeholder=""></div></div><div class="col-12 col-sm-6 col-md-4"><div class=""><label class="form-label">width</label><input type="number" class="form-control width" placeholder=""></div></div>
+
+                    <div class="col-12 col-sm-6 col-md-4"><div class=""><label class="form-label">height</label><input type="number" class="form-control height" placeholder=""></div></div><div class="col-12 col-sm-6 col-md-4"><div class=""><label class="form-label">weight</label><input type="number" class="form-control weight" placeholder=""></div></div><div class="col-12 p-0"><div class="row p-0"><div class="col-6 courier pt-4">
+                    <div class="">
+                        <input type="radio" class="btn-check" name="itemtype`+rownumber+`" id="itemtype-normal`+rownumber+`" autocomplete="off" checked>
+                        <label class="btn btn-outline-success" for="itemtype-normal`+rownumber+`">Normal</label>
+                    </div></div><div class="col-6 courier pt-4"><div class="">
+                        <input type="radio" class="btn-check" name="itemtype`+rownumber+`" id="itemtype-sensitive`+rownumber+`" autocomplete="off">
+                        <label class="btn btn-outline-success" for="itemtype-sensitive`+rownumber+`">Sensitive</label></div></div></div></div></div>`;
+
+            $('#myseedbox').append(newRow);
+        
+        }
+    </script>
+
+</body>
+</html>
+
+<!--<select class="form-select" aria-label="Default select example">
+    <option selected>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+</select>-->
+<!--
+<div class="row py-4">
+    <div class="col-12">
+        <h3>Price calculation</h3>
+        <hr>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4">
+        <div class="mb-3">
+            <label for="itemprice" class="form-label">Item Price</label>
+            <input type="number" class="form-control" id="itemprice" placeholder="" disabled>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4">
+        <div class="mb-3">
+            <label for="domesticprice" class="form-label">Domestic Courier Price</label>
+            <input type="number" class="form-control" id="domesticprice" placeholder="" disabled>
+          </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4">
+        <div class="mb-3">
+            <label for="insurance" class="form-label">Insurance</label>
+            <input type="number" class="form-control" id="insurance" placeholder="" disabled>
+          </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4">
+        <div class="mb-3">
+            <label for="insurance" class="form-label">Item Total Price</label>
+            <input type="number" class="form-control" id="insurance" placeholder="" disabled>
+          </div>
+    </div>
+
+</div>-->
