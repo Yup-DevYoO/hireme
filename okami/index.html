@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        body{margin: 0;}
+        #calculator{margin: 75px 10%; padding: 40px; text-align: left; font-size: 16px!important;font-family: 'Poppins', sans-serif;font-weight: 400;box-shadow: 0px 0px 20px -2px rgb(207 207 207 / 50%); border-bottom: 12px solid green;} #calculator p{margin: 0;} hr{ border: 1px solid #dcd7ca;}
+        *, ::after, ::before { box-sizing: border-box; }
+        #calculator #demo{margin-left: 5px;}
+     
+
+        #calculator label{padding-top: 10px;padding-bottom: 4px;display: block;}
+        #calculator input{ display: block; width:100%;padding: 15px 18px;box-sizing: border-box; border: 1px solid #dcd7ca;font-size: 16px!important;font-family: 'Poppins', sans-serif;font-weight: 400;}
+
+        #calculator .tooltip {position: relative; display: inline-block;top:2px;}
+        #calculator .tooltip .tooltiptext { visibility: hidden; width: 220px; background-color: #0fbd73; color:white; padding: 20px 15px; border-radius: 6px; position: absolute; z-index: 1; bottom: 100%; left: 80%; }
+        #calculator .tooltip:hover .tooltiptext {visibility: visible;}
+        
+        #calculator #calc-result{font-size:30px;color:#0fbd73; display: inline-block;padding-top: 20px;}
+
+        @media(max-width:700px){
+            #calculator{margin: 75px 2%;padding: 20px;}
+            #calculator .tooltip .tooltiptext{width: 180px; right:-80px;left: inherit;}
+        }
+    </style>
+
+    <div id="calculator" class="calculator" >
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <br>
+        <label class="inline">
+            <span>One-time investment (€)</span>
+            <div class="tooltip">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0fbd73" class="bi bi-info-circle-fill" viewBox="0 0 16 16" style="margin-left:8px;">
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
+                <span class="tooltiptext">
+                    <p>Enter the amount here that you want to invest from the start. Enter "0" if you only want to invest with a savings plan.</p>
+                </span>
+            </div>
+        </label>
+
+        <input class="inline" type="number" id="principle" value="0" min="0">
+        <br>
+
+        <label class="inline">Savings rate (€)
+            <div class="tooltip">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0fbd73" class="bi bi-info-circle-fill" viewBox="0 0 16 16" style="margin-left:8px;">
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
+                <span class="tooltiptext">
+                    <p>Here you enter how much you would like to invest on an ongoing basis. Enter "0" if you only invest once.</p>
+                </span>
+            </div>
+        </label>
+        <input type="number" id="contribution" value="100" min="0">
+
+        <br>
+
+        <label>Savings period / investment horizon (years):
+            <span id="demo">1</span>
+        </label>
+        <input type="range" id="period" value="1" min="1">
+        <br>
+        <hr>
+        <div>
+            <div id="calc-result">1.617.34</div><span style="color:#0fbd73; font-size:17px;margin-left:10px;">€</span>
+        </div>
+        <a href="https://aniation.com" title="aniation.com" style="font-size:12px; text-align: left;text-decoration: none;color:#0fbd73; margin-top: 30px;display: inline-block;border-bottom: 1px dotted #3bc3bc;">Created By aniation.com</a>
+    </div>
+
+    <script>
+        var slider = document.getElementById("period");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+        slider.oninput = function () {
+            output.innerHTML = this.value
+        }
+    </script>
+
+    <script>
+        ! function ($) {
+            var principle = $('#principle'),   //1
+            contribution = $('#contribution'),  //2
+            period = $('#period'),  //3
+            frequency = 30,
+            interest = 6,
+            result = $('#calc-result'),
+
+            inputs = $('input, select'),
+            fv = function () {
+                var r = parseFloat(interest) / 100 / 365,
+                    C = parseFloat(contribution.val()),
+                    P = parseFloat(principle.val()),
+                    y = parseFloat(period.val()),
+                    d = 365 * y,
+                    n = parseFloat(frequency),
+                    nn = Math.floor(365 / n),
+                    total = P + C,
+                    ri = 0;
+                var yr = new Date().getFullYear(),
+                    count = 0,
+                    initialDeposit = !0,
+                    z, zz;
+                while (count++ < d) {
+                    z = new Date(yr, 0, count);
+                    zz = new Date(yr, 0, count + 1);
+                    if (count % n === 0) {
+                        if (!initialDeposit) {
+                            total += C
+                        } else {
+                            initialDeposit = !1
+                        }
+                    }
+                    if (zz.getDate() < z.getDate()) {
+                        total += ri;
+                        ri = 0
+                    }
+                    ri += total * r
+                }
+                return total
+            },
+            update = function () {
+                var val = fv();
+                if( !Number.isNaN(val) ){
+                    result.html(val.toFixed(2).replace(/(\d)(?=(\d{3})+\b)/g, '1.'))
+                }else{
+                    result.html('0')
+                }
+            };
+            update();
+            inputs.on('change keyup', update)
+        }(jQuery)
+    </script>
+</body>
+
+</html>
