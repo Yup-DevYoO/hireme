@@ -67,16 +67,15 @@
 
         <br>
 
-        <label>Spardauer / Anlagehorizont (Jahre):
+        <label>Spardauer / Anlagehorizont (Monate):
             <span id="demo">1</span>
         </label>
-        <input type="range" id="period" value="1" min="1">
+        <input type="range" id="period" value="1" min="1" max="120">
         <br>
         <hr>
         <div>
             <div id="calc-result">1.617.34</div><span style="color:#0fbd73; font-size:17px;margin-left:10px;">€</span>
         </div>
-        <a href="https://aniation.com" title="aniation.com" style="font-size:12px; text-align: left;text-decoration: none;color:#0fbd73; margin-top: 30px;display: inline-block;border-bottom: 1px dotted #3bc3bc;">Erstellt von aniation.com</a>
     </div>
 
     <script>
@@ -88,60 +87,55 @@
         }
     </script>
 
-    <script>
-        ! function ($) {
-            var principle = $('#principle'),   //1
-            contribution = $('#contribution'),  //2
-            period = $('#period'),  //3
-            frequency = 30,
-            interest = 6,
-            result = $('#calc-result'),
+<script>
+    ! function ($) {
+        var principle = $('#principle'),   //1
+        contribution = $('#contribution'),  //2
+        period = $('#period'),  //3
+        frequency = 30,
+        interest = 6,
+        result = $('#calc-result'),
 
-            inputs = $('input, select'),
-            fv = function () {
-                var r = parseFloat(interest) / 100 / 365,
-                    C = parseFloat(contribution.val()),
-                    P = parseFloat(principle.val()),
-                    y = parseFloat(period.val()),
-                    d = 365 * y,
-                    n = parseFloat(frequency),
-                    nn = Math.floor(365 / n),
-                    total = P + C,
-                    ri = 0;
-                var yr = new Date().getFullYear(),
-                    count = 0,
-                    initialDeposit = !0,
-                    z, zz;
-                while (count++ < d) {
-                    z = new Date(yr, 0, count);
-                    zz = new Date(yr, 0, count + 1);
-                    if (count % n === 0) {
-                        if (!initialDeposit) {
-                            total += C
-                        } else {
-                            initialDeposit = !1
-                        }
+        inputs = $('input, select'),
+        fv = function () {
+            var r = parseFloat(interest) / 100 / 30,
+                C = parseFloat(contribution.val()),
+                P = parseFloat(principle.val()),
+                y = parseFloat(period.val()),
+                d = 30 * y//d = 365 * y,
+                n = parseFloat(frequency),
+                total = P + C,
+                ri = 0;
+                count = 0,
+                initialDeposit = !0;
+
+            while (count++ < d) {
+                ri += total * r
+                if (count % n === 0) {
+                    if (!initialDeposit) {
+                        total += C
+                    } else {
+                        initialDeposit = !1
                     }
-                    if (zz.getDate() < z.getDate()) {
-                        total += ri;
-                        ri = 0
-                    }
-                    ri += total * r
+                    total += ri;
+                    ri = 0
                 }
-                return total
-            },
-            update = function () {
-                var val = fv();
-                if( !Number.isNaN(val) ){
-                    result.html(val.toFixed(2).replace(/(\d)(?=(\d{3})+\b)/g, '1.'))
-                }else{
-                    result.html('0')
-                }
-            };
-            update();
-            inputs.on('change keyup', update)
-        }(jQuery)
-    </script>
+            }
+            return total
+        },
+        update = function () {
+            var val = fv();
+            if( !Number.isNaN(val) ){
+                result.html(val.toFixed(2).replace(/(\d)(?=(\d{3})+\b)/g, '1,'))
+            }else{
+                result.html('0')
+            }
+        };
+        update();
+        inputs.on('change keyup', update)
+    }(jQuery)
+</script>
+
 </body>
 
 </html>
