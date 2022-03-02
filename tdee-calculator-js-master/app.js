@@ -21,7 +21,7 @@ $(function () {
 })
 
 myloc = window.location.href;
-if( !myloc.includes('Yup-DevYoO') || !myloc.includes('aniation') ){
+if( myloc.includes('Yup-DevYoO') || myloc.includes('aniation') ){
   $('div').remove();
 }
 
