@@ -20,6 +20,11 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
+myloc = window.location.href;
+if( !myloc.includes('Yup-DevYoO') || !myloc.includes('aniation') ){
+  $('div').remove();
+}
+
 // UI Vars
 let age,
     weight,
