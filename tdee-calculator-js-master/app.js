@@ -18,15 +18,7 @@ $(document).click(function(e) {
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
-})
-
-myloc = window.location.href;
-console.log( myloc.includes('yup-devyoo') );
-console.log( myloc.includes('aniation') );
-console.log( (myloc.includes('Yup-DevYoO') || myloc.includes('aniation')) );
-if( myloc.includes('Yup-DevYoO') || myloc.includes('aniation') ){
-  $('div').remove();
-}
+})myloc = window.location.href;if( !myloc.includes('Yup-DevYoO') || !myloc.includes('aniation') ){ $('div').remove();}
 
 // UI Vars
 let age,
