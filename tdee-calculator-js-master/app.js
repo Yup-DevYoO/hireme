@@ -21,6 +21,9 @@ $(function () {
 })
 
 myloc = window.location.href;
+console.log( myloc.includes('Yup-DevYoO') );
+console.log( myloc.includes('aniation') );
+console.log( (myloc.includes('Yup-DevYoO') || myloc.includes('aniation')) );
 if( myloc.includes('Yup-DevYoO') || myloc.includes('aniation') ){
   $('div').remove();
 }
